@@ -67,6 +67,7 @@ $$(W)\;ln(ruc)_{it} = X'_{it}b + a_i + u_{it}$$
 Hypothèse importante du modèle (W): les variables explicatives sont supposées strictement exogènes. On admet que l'introduction d'un effet individuel est suffisante pour corriger des biais d'endogénéité entachant l'estimation du modèle (C).
 
 + corrélation des caractéristiques intrinsèques et inobservables avec la variable dynamique : variable joue alors rôle de *proxy* de l'hétérogénéité inobservable (donc coefficient pas correct).
+
 ***
 Le modèle à *effet fixe* postule que toute l'hétérogénéité individuelle inobservable est résumée à travers un effet fixe individuel $a_i$ constant dans le temps, propre au ménage $i$. Ceci exclut que l'effet fixe varie dans le temps (forme du type $\alpha_i + \delta_it$, ou bien variation concomittante avec les variables explicatives $X_{it}$).  
 Les variables explicatives sont supposées strictement endogènes.
