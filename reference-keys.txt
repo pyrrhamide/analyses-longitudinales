@@ -8,13 +8,10 @@ mod-lin
 modèles-pooled-phase-1
 modèles-à-effets-fixes-phase-2
 estimation-within-du-modèle-à-effet-fixe
-présentation-article
 objet-de-recherche
-littératurerecherches-sur-le-sujet-et-leurs-limites
 questions-de-recherche
 données-mobilisées
 méthodologie
 intérets-de-ces-choix-de-méthodes
 résultats
-interprétation
 conclusion
