@@ -1,0 +1,63 @@
+# Panorama des méthodes pour les analyses longitudinales {#pano}
+
+Beaucoup de phénomènes sociaux et économiques sont dynamiques :
+
+- étude de l'évolution du salaire,
+- étude de la mobilité géographique ou professionnelle,
+- insertion sur le marché du travail,
+- évolution des pratiques culturelles.
+
+L'étude longitudinale permet d'intégrer le temps dans une étude sociologique.
+
+Deux types d'études:
+
+* études transversales ou en coupe (*cross sectional*)
+  * mesure d'une variable sur un groupe de personnes à un instant $t$,
+  * photo ponctuelle de la société.
+* études longitudinales
+  * série de mesures sur un groupe d'individus fixes à plusieurs instants,
+  * constitution d'un "panel",
+  * film sur un laps de temps d'un phénomène social.
+  
+Pour les études longitudinales, trois façons différentes de collecter des données longitudinales:
+
+* la première est **rétrospective**: elle consiste à interroger les individus sur leur passé afin de reconstituer des séquences d'évènements.
+* la seconde est **prospective**: elle procède par la répétition d'un protocole d'enquête sur les mêmes individus au cours du temps.
+* la troisième consiste à **relier a posteriori des données administratives** enregistrées pour différents évènements de la vie des individus.
+
+## Intérêt des études longitudinales
+
+Les données de panels permettent d'étudier la dynamique des trajectoires individuelles et des comportements.
+
+- contrôler l'hétérogénéité inter-individuelle: l'analyse longitudinale permet de mettre en évidence beaucoup plus facilement des variables cachées qui peuvent biaiser une régression faite en analyse transversale.
+- étudier la dynamique d'ajustement: par exemple, si une analyse transversale peut montrer qu'une part importante de la population est au chômage, une analyse longitudinale peut montrer que ce ne sont pas les mêmes personnes qui restent au chômage et qu'il existe un turnover important. Les conclusions sont vraiment différentes.
+- Analyses causales (e.g. Mirna Safi, "La dimension socioéconomique de l'intégration des immigrés en France: participation au marché du travail").
+
+## Limites des études longitudinales
+
+Le plus évident: le coût et les moyens énormes nécessaires à la mise en place d'une telle étude.
+
+**Représentativité statistique**: l'une des exigences pour une étude statistique est d'être représentative pour la société. Or comme la société évolue, un panel représentatif à un instant $t$ ne le sera peut-être plus 10 ans plus tard. Solution: panel rotatif (on renouvelle les individus du panel régulièrement).
+
+**Attrition**: perte de données au cours de l'enquête. Panel cylindré = pas de perte, à chaque temps $t$, le nombre de mesure est le même. En pratique, impossible à mettre en place. Plusieurs difficultés: les volontaires peuvent se lasser de répondre aux enquêtes. Le suivi géographique des interrogés peut être compliqué: déménagement, départ à l'étranger, décès. Ces évènements peuvent être corrélés avec une caractéristique sociologique, un biais peut donc s'installer et se renforcer au cours du temps.
+
+## Modélisations sur données longitudinales : économétrie des panels et modèles de durée
+
+Dans les travaux empiriques en sciences sociales, deux principales familles de méthodes sont le plus souvent utilisées pour analyser les données longitudinales: l'économétrie des panels et les modèles de durée.
+
+Modèle transversal de régression (qu'elle soit linéaire ou dichotomique) s'intéresse aux différences interindividuelles:
+
+- $Y_i = X_i \beta + \mu_i$ (où $i$ fait référence à l'individu).
+
+Les données de panel varient quant à elles dans deux dimensions : la dimension interindividuelle et la dimension intraindividuelle ou temporelle.
+
+- $Y_{i,t} = X_{i,t} \beta + \mu_{i,t}$ (où chaque variable est indexée à la fois par individu et par période).
+
+Quant aux modèles de durée, connus dans la littérature par l'expression *Event History Analysis*, ils désignent un ensemble de méthodes qui traitent les données longitudinales dans une **optique d'occurence ou non de certains évènements**.
+
+Dans la majorité de leurs applications, ces méthodes visent donc à analyser la durée dans un état ou encore la transition d'un état à l'autre (appelée parfois risque):
+
+- des évènements démographiques (mariage, mise en couple, divorce, etc.),
+- ou socioéconomiques (chômage, participation sur le marché du travail, passage à la retraite, etc.).
+
+Dans chaque cas, la population prise en compte dans l'analyse est celle susceptible de connaître l'évènement; il s'agit de la population à risque. Ainsi, pour analyser le divorce dans une optique de type *Event History Analysis*, il faut se limiter aux individus mariés à un instant $t$; de même pour étudier la participation des femmes sur le marché du travail, seules celles inactives à un instant $t$ sont incluses dans l'échantillon, etc.

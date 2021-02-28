@@ -1,0 +1,73 @@
+# Modèles linéaires  {#mod-lin}
+$$y_{i,t} = \alpha_i + \beta_ik_{i,t} + \gamma_in_{i,t} + \epsilon_{i,t}$$
+
+- $y_{i,t}$: niveau de vie personne $i$ à date $t$,  
+- $k_{i,t}$: âge de indiv $i$ à date $t$,  
+- $n_{i,t}$: nb unité de conso du ménage de l'individu $i$ à date $t$,  
+- $\epsilon_{i,t}$: (erreur/bruit) supposées être iid (indépendantes entre elles et identiquement distribuées - qui suivent la loi normale) de moyenne nulle et de variance égale à $\sigma^2$.  
+
+Le modèle linéaire sépare les effets et construit analyse moins descriptive/plus analytique. Par exemple, quand on cherche à expliquer le niveau de vie en FRA, qu'est-ce qui est plus important ? Le niveau de diplôme ? La composition du ménage ? Le modèle linéaire fonctionne indépendamment de la progression des générations.  
+Toutes les variables qui sont relatives à l'individu $i$ et qui évoluent dans le temps.  
+
+Paramètres à estimer:
+
+- $\alpha_i$: effet constant. Ne dépend pas de $t$. Paramètre qu'on suppose constant dans le temps. L'enlever voudrait dire qu'il n'y a pas de différences inter individuelles (pas d'héritage, pas d'hétérogénéité entre individu), que le changement niveau de vie est dû à des effets structurels.  
+- $\beta_i$: paramètre de l'âge, différent par individu.  
+- $\gamma_i$: paramètre de l'unité de conso, différent par individu.  
+
+**Question : ces paramètres dépendent-ils de $i$?**\
+
+## Modèles **pooled** (phase 1)  
+
+Si aucun paramètre ne dépend de $i$:
+$$y_{i,t} = \alpha + \beta k_{i,t} + \gamma n_{i,t} + \epsilon_{i,t}$$
+Hypothèse (1) d'homogénéité totale: "aucun des paramètres ne dépend de $i$" mais d'$\alpha$ constant ne dépendant pas des individus. Quels que soient les individus $i$, la fonction expliquant leur niveau de vie s'écrit avec des paramètres identiques et constants $\beta$ et $\gamma$. Effet niveau de vie suit une fonction qui est la même pour tous les individus (modèle unique) => modèle *pooled*.  
+
+***
+On teste l'hypothèse d'une structure parfaitement homogène (constantes et coefficients identiques):
+$$H_0^1 : \beta_i = \beta \quad \alpha_i = \alpha \quad \forall i \in [1,N] \\
+H_\alpha^1: \exists (i,j) \in [1,N] \; /\; \beta_i \neq \beta_j \;ou\; \alpha_i \neq \alpha_j$$
+
+On utilise une *statistique de Fischer* pour tester les restrictions linéaires.
+
+* $H_0^1$ acceptée => modèle pooled homogène.
+* $H_0^1$ rejetée => deuxième test déterminant si hétérogénéité provient des coefficients $\beta_i$.
+
+***
+
+Tester ce cadre là. Structure explicative du phénomène même pour tout le monde ? Ou bien élasticités des différents facteurs identiques ?\
+S'il existe bien une relation identique entre âge et UC pour tous les individus, source d'hétérogénéité peut provenir des constantes $\alpha_i$.
+
+## Modèles à **effets fixes** (phase 2)   
+
+ou modèle à effet individuel.
+
+Si seuls les $\alpha_i$ dépendent de $i$:
+$$y_{i,t} = \alpha_i + \beta k_{i,t} + \gamma n_{i,t} + \epsilon_{i,t}$$
+Pour tous les individus $i$, les variables explicatives temporelles jouent de la même façon *et* il existe des différences structurelles entre les individus.\
+
+Hypothèse (2) d'homogénéité des coefficients $\beta_i$: est-ce que $\beta$ et $\gamma$ sont constants, et que seuls les $\alpha_i$ dépendent des individus ? Niveau de vie évolue de la même façon pour tout le monde en fonction de l'âge et du nb d'UC (var observées dynamiques jouent de la même façon pour tout le monde), mais constante $a_i$ différente entre les gens (certain.e.s ont un bonus). Introduction terme individuel qui rend compte de différences entre individus => modèle à *effets fixes*.  
+
+***
+On cherche maintenant à déterminer si l'hétérogénéité provient des coefficients $\beta_i$:
+$$H_0^2 : \beta_i = \beta \quad \forall i \in [1,N] \\
+H_\alpha^2: \exists (i,j) \in [1,N] \; /\; \beta_i \neq \beta_j $$
+
+On utilise une *statistique de Fischer* pour tester les restrictions linéaires.
+
+* $H_0^2$ homogénéité des coefficients $\beta_i$ rejetée => rejet structure de panel.
+* $H_0^2$ acceptée => on teste maintenant l'égalité des N constantes individuelles $\alpha_i$ sous l'hypothèse de coefficients $\beta_i$ communs à tous les individus :
+
+$$H_0^3 : \alpha_i = \alpha \quad \forall i \in [1,N] \\ H_\alpha^3: \exists (i,j) \in [1,N] \; /\; \alpha_i \neq \alpha_j$$
+On utilise une *statistique de Fischer* pour tester les restrictions linéaires.
+
+* $H_0^3$ homogénéité des constantes rejetée => modèle de panel avec effets individuels.
+* $H_0^3$ acceptée => modèle pooled.
+
+***
+
+## Estimation "within" du modèle à effet fixe
+(issu de l'article *Impact du non-emploi sur les revenus et la pauvreté : l'influence de l'hétérogénéité individuelle non-observable*)  
+L’estimation du modèle à effet fixe estimé en "within" se fait par élimination de l’effet fixe par l’opérateur de projection « within », ce qui revient à estimer par les moindres carrés ordinaires un modèle dans lequel toutes les variables sont remplacées par leurs différences à leurs moyennes pour l’individu considéré :
+$$ln(ruc)_{it} - ln(ruc)_{i.} = (X'_{it} - X'_{i.})b + v_{it}$$
+L'estimation de ce modèle ne requiert donc aucune hypothèse particulière sur la corrélation (ou plutôt l'absence de corrélation) entre l'effet fixe $a_i$ et les autres variables explicatives.

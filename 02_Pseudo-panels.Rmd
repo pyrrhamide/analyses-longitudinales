@@ -1,0 +1,56 @@
+# Pseudo-panels {#pseudo-panel}
+
+* Répétition d'enquêtes "en coupe transversale",
+* **Avantage** : échantillons représentatifs à chaque date (pas d'attrition, pas de déformation comme dans les cohortes),
+* **Inconvénient** : impossibilité de suivre les individus.
+
+Problème classique : effet d'âge v de génération.
+
+- cf. étude des salaires mensuels moyens des ouvriers en fonction de l'âge (Baudelot et Gollac, 1997), extraits d'un échantillon permanent constitué à partir des déclarations annulles de salaires effectuées par les entreprises.
+
+Concrétement, il s'agit:
+
+* d'empiler les éditions d'enquêtes,
+* de conserver une variable d'âge au moment de l'enquête,
+* de calculer une variable de génération.
+
+Plusieurs questions se posent:
+
+* Quid de l'effet "période" ?
+* Constitution *a posteriori* de cohortes (ici générations), mais:
+  * nécessité de s'appuyer sur un critère stable dans le temps (mauvais exemple: salaire, situation du marché du travail),
+  * surveiller la consistance des cohortes,
+  * surveiller la taille des cohortes,
+  * attention à l'attrition (e.g. décès)
+  
+## Application des modèles linéaires aux pseudo-panels
+
+Rappel: modélisation avec un effet fixe individuel au modèle linéaire classique, censé capter l'effet des caractéristiques individuelles constantes dans le temps sur la variable d'intérêt.
+$$y_{i,t}=x_{i,t}\beta + \alpha_i + \epsilon_{i,t} \quad i = 1,...,N \quad t=1,...,T$$
+
+- $y_{i,t}$ = variable d'intérêt,
+- $x_{i,t}$ = vecteur (ligne) de K variables explicatives observées sur l'individu $i$ à la date $t$,
+- $\beta$ = effet de ces variables (soit un vecteur de paramètres de dimension K),
+- $\alpha_i$ = effet fixe individuel.
+
+*Principe de l'application aux pseudo-panels*
+
+* suivre dans le temps non plus les individus, mais des **cohortes**, càd des groupes d'individus partageant un E de caractéristiques fixes dans le temps,
+* modéliser au niveau de ces cohortes d'individus et non plus au niveau des individus qui les composent,
+* remplacer les variables observées par les moyennes de ces variables au sein de chaque cohorte.
+
+Formellement, on s'intéresse à $y^\star_{c,t}=E(y_{i,t} | i \in c,t)$, espérance de la variable d'intérêt sur la cohorte $c$ à la date $t$.\
+On obtient en effet à partir du modèle précédent (en l'intégrant conditionnellement à la date et à la cohorte):
+$$y^\star_{c,t}=x^\star_{c,t}\beta + \alpha_{c,t}^\star + \epsilon_{c,t}^\star \quad c=1,...,C \quad t=1,...,T$$
+où pour chaque variable $z$, $z_{c,t}^\star = E(z_{c,t}|i \in c,t)$.
+
+Problèmes:
+
+* les $z_{c,t}^\star = E(z_{c,t}|i \in c,t)$ ne sont pas connus,
+  * on utilise $\bar y_{c,t} = \frac{1}{n_{c,t}} \sum_{i \in c,t} y_{i,t} \quad \bar x_{c,t} = \frac{1}{n_{c,t}} \sum_{i \in c,t}x_{i,t}$ et,
+* fluctuation d'échantillonnage des individus d'une cohorte d'une date à une autre,
+* stabilité des cohortes à surveiller.
+
+In fine:
+
+* Modèle estimé: $\bar y_{c,t}=\bar x_{c,t}\beta + \bar \alpha_c + \bar \epsilon_{c,t} \quad t=1,...,T \quad c=1,...,C$
