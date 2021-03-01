@@ -15,5 +15,5 @@ méthodologie
 intérets-de-ces-choix-de-méthodes
 résultats
 conclusion
-modèles-dynamiques
+mod-dyn
 les-modèles-dynamiques-autorégressifs

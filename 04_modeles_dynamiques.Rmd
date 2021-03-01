@@ -1,4 +1,4 @@
-# Modèles dynamiques 
+# Modèles dynamiques {#mod-dyn}
 
 Un modèle dynamique fait intervenir des retards sur une ou plusieurs variables (analyse du temps présent en fonction du temps passé):
 
