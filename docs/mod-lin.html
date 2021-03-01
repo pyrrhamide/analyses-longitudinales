@@ -98,6 +98,10 @@
 <li class="chapter" data-level="3.8" data-path="presentation.html"><a href="presentation.html#résultats"><i class="fa fa-check"></i><b>3.8</b> Résultats</a></li>
 <li class="chapter" data-level="3.9" data-path="presentation.html"><a href="presentation.html#conclusion"><i class="fa fa-check"></i><b>3.9</b> Conclusion</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="modèles-dynamiques.html"><a href="modèles-dynamiques.html"><i class="fa fa-check"></i><b>4</b> Modèles dynamiques</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="modèles-dynamiques.html"><a href="modèles-dynamiques.html#les-modèles-dynamiques-autorégressifs"><i class="fa fa-check"></i><b>4.1</b> Les modèles dynamiques autorégressifs</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -184,10 +188,14 @@ On utilise une <em>statistique de Fischer</em> pour tester les restrictions lin�
 </div>
 <div id="estimation-within-du-modèle-à-effet-fixe" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Estimation “within” du modèle à effet fixe</h2>
-<p>(issu de l’article <em>Impact du non-emploi sur les revenus et la pauvreté : l’influence de l’hétérogénéité individuelle non-observable</em>)<br />
-L’estimation du modèle à effet fixe estimé en “within” se fait par élimination de l’effet fixe par l’opérateur de projection « within », ce qui revient à estimer par les moindres carrés ordinaires un modèle dans lequel toutes les variables sont remplacées par leurs différences à leurs moyennes pour l’individu considéré :
-<span class="math display">\[ln(ruc)_{it} - ln(ruc)_{i.} = (X&#39;_{it} - X&#39;_{i.})b + v_{it}\]</span>
+<p>Dans le cas “effets fixes”
+<span class="math display">\[y_{i,t} = \alpha_i + \beta&#39; x_{i,t} + \epsilon_{i,t} \quad \forall i \in [1,N], \forall t \in [1,T]\]</span></p>
+<p>Les <span class="math inline">\(\beta\)</span> peuvent être obtenus à partir de MCO calculés sur le modèle suivant:
+<span class="math display">\[(y_{i,t}-\bar y_i) = \beta&#39;(x_{i,t} - \bar x_i) + \epsilon_{i,t} \quad \forall i \in [1,N], \forall t \in [1,T]\]</span>
+L’estimation du modèle à effet fixe estimé en “within” se fait par élimination de l’effet fixe par l’opérateur de projection « within », ce qui revient à estimer par les moindres carrés ordinaires un modèle dans lequel toutes les variables sont remplacées par leurs différences à leurs moyennes pour l’individu considéré. Les réalisations des estimateurs des constantes <span class="math inline">\(\alpha_i\)</span> sont alors déduits de la relation :
+<span class="math display">\[\alpha_i = \bar y_i - \beta&#39; \bar x_i\]</span>
 L’estimation de ce modèle ne requiert donc aucune hypothèse particulière sur la corrélation (ou plutôt l’absence de corrélation) entre l’effet fixe <span class="math inline">\(a_i\)</span> et les autres variables explicatives.</p>
+<p>MOYENNE DES <span class="math inline">\(a_i\)</span> EST EGALE A <span class="math inline">\(a\)</span>!!!!!!</p>
 
 </div>
 </div>

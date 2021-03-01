@@ -1,0 +1,45 @@
+# Modèles dynamiques 
+
+Un modèle dynamique fait intervenir des retards sur une ou plusieurs variables (analyse du temps présent en fonction du temps passé):
+
+* si ces variables sont uniquement exogènes, on parlera de **modèles à retard échelonnés** comme dans la formule simple
+
+$$y_t = c + \sum_{i=0}^r a_i x_{t-i} + \epsilon_t$$
+
+* si les variables retardées correspondent à l'endogène, on appellera ces modèles des **modèles autorégressifs**
+
+$$y_t = c + \sum_{i=1}^r a_i x_{t-i} + \epsilon_t \\ou\\ y_t = c+\sum_{i=1}^r a_i y_{t-i}+bx_t + cz_t + \epsilon_t$$
+Dans le cas général, on parlera de modèles autorégressifs et à retards échelonnés:
+$$y_t = c + \sum_{i=1}^r a_iy_{t-i} + \sum_{j=0}^l b_jx_{t-j} + \epsilon_t$$
+à gauche : variables retardées endogènes.
+à droite : retards échelonnés exogènes.
+
+Nombreuses applications, en particulier lorsque l'on suppose l'existence d'une dépendance du phénomène observé par rapport à ses états antérieurs :
+
+- étude du revenu disponible des ménages (dépend des dépenses passées et des revenus restants),
+- étude des phénomènes de transmission de capitaux.
+
+## Les modèles dynamiques autorégressifs
+Exemple simple:
+$$y_t = a + bx_t + cy_{t-1} + \epsilon_t$$
+
+Question : les erreurs $\epsilon_t$ sont-elles corrélées ? $Cov(\epsilon_t,\epsilon_{t-1} <> 0)$ ?
+
+- si oui (i.e supérieur (différent?) à 0), problème car alors $y_t$ dépend non seulement de $\epsilon_t$ mais aussi de $\epsilon_{t-1},\epsilon_{t-2},\epsilon_{t-3}$, etc. 
+- si non ($Cov(\epsilon_t,\epsilon_{t-1}= 0)$), alors les MCO sont utilisables.
+  - mais suppose de **très gros échantillons** pour suffisamment de convergence des estimateurs.
+  
+Plusieurs tests possibles pour vérifier l'autocorrélation des résidus :
+
+- **Test de Durbin-Watson** $\epsilon_t = \rho \epsilon_{t-1} + u_t$
+  - $H_0$ : il y a non autocorrélation $\Leftrightarrow \rho=0$,
+  - $H_1$ : il y a autocorrélation $\Leftrightarrow \rho \neq 0$ avec toujours $|\rho| < 1$.
+  
+Statistique de Durbin-Watson:
+  $$H=\frac{\rho}{\sqrt{\frac{1}{n}-Var(a_1)}}$$
+  
+  * $\rho$ est l'estimateur de $\rho$, 
+  * n la taille de l'échantillon et,
+  * $Var(a_1)$ la variance estimée du premier retard sur l'endogène.
+  
+(problème avec les ^, vérifier les slides pour pas faire de bêtise)

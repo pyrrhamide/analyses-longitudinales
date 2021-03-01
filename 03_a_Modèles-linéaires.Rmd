@@ -67,7 +67,13 @@ On utilise une *statistique de Fischer* pour tester les restrictions linéaires.
 ***
 
 ## Estimation "within" du modèle à effet fixe
-(issu de l'article *Impact du non-emploi sur les revenus et la pauvreté : l'influence de l'hétérogénéité individuelle non-observable*)  
-L’estimation du modèle à effet fixe estimé en "within" se fait par élimination de l’effet fixe par l’opérateur de projection « within », ce qui revient à estimer par les moindres carrés ordinaires un modèle dans lequel toutes les variables sont remplacées par leurs différences à leurs moyennes pour l’individu considéré :
-$$ln(ruc)_{it} - ln(ruc)_{i.} = (X'_{it} - X'_{i.})b + v_{it}$$
+Dans le cas "effets fixes"
+$$y_{i,t} = \alpha_i + \beta' x_{i,t} + \epsilon_{i,t} \quad \forall i \in [1,N], \forall t \in [1,T]$$
+
+Les $\beta$ peuvent être obtenus à partir de MCO calculés sur le modèle suivant:
+$$(y_{i,t}-\bar y_i) = \beta'(x_{i,t} - \bar x_i) + \epsilon_{i,t} \quad \forall i \in [1,N], \forall t \in [1,T]$$
+L’estimation du modèle à effet fixe estimé en "within" se fait par élimination de l’effet fixe par l’opérateur de projection « within », ce qui revient à estimer par les moindres carrés ordinaires un modèle dans lequel toutes les variables sont remplacées par leurs différences à leurs moyennes pour l’individu considéré. Les réalisations des estimateurs des constantes $\alpha_i$ sont alors déduits de la relation :
+$$\alpha_i = \bar y_i - \beta' \bar x_i$$
 L'estimation de ce modèle ne requiert donc aucune hypothèse particulière sur la corrélation (ou plutôt l'absence de corrélation) entre l'effet fixe $a_i$ et les autres variables explicatives.
+
+MOYENNE DES $a_i$ EST EGALE A $a$!!!!!!
