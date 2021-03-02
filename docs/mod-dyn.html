@@ -125,10 +125,12 @@
 <ul>
 <li>si ces variables sont uniquement exogènes, on parlera de <strong>modèles à retard échelonnés</strong> comme dans la formule simple</li>
 </ul>
-<p><span class="math display">\[y_t = c + \sum_{i=0}^r a_i x_{t-i} + \epsilon_t\]</span>
-- <span class="math inline">\(y_t\)</span> valeur à la date <span class="math inline">\(t\)</span>
-- <span class="math inline">\(c\)</span> point à l’origine (équivalent de <span class="math inline">\(\beta_0\)</span>)
-- <span class="math inline">\(a_i\)</span> (équivalent de <span class="math inline">\(\beta_i\)</span>): une unité de plus de <span class="math inline">\(x_{t}\)</span> sur <span class="math inline">\(y_t\)</span>, en gardant <span class="math inline">\(x_{t-1}\)</span> constant.</p>
+<p><span class="math display">\[y_t = c + \sum_{i=0}^r a_i x_{t-i} + \epsilon_t\]</span></p>
+<ul>
+<li><span class="math inline">\(y_t\)</span> valeur à la date <span class="math inline">\(t\)</span></li>
+<li><span class="math inline">\(c\)</span> point à l’origine (équivalent de <span class="math inline">\(\beta_0\)</span>)</li>
+<li><span class="math inline">\(a_i\)</span> (équivalent de <span class="math inline">\(\beta_i\)</span>): une unité de plus de <span class="math inline">\(x_{t}\)</span> sur <span class="math inline">\(y_t\)</span>, en gardant <span class="math inline">\(x_{t-1}\)</span> constant.</li>
+</ul>
 <p>Dans ce cas là, seule la valeur <span class="math inline">\(x_{t-i}\)</span> de la période passée impacte la valeur <span class="math inline">\(y_t\)</span> de la période présente. Cependant, ce modèle estimé par les MCO rencontre des problèmes de multicollinéarité (la variable <span class="math inline">\(x_{t-1}\)</span> est un multiple de la variable <span class="math inline">\(x_{t-2}\)</span>, etc.), de degrée de liberté, et une tendance non-continuelle des coefficients estimés dans le temps (pas dans le même sens, pas la même ampleur).</p>
 <ul>
 <li>si les variables retardées correspondent à l’endogène (effet de.s variable.s explicatives s’étend sur plusieurs périodes <span class="math inline">\(t\)</span> d’une manière géométrique), on appellera ces modèles des <strong>modèles autorégressifs</strong></li>

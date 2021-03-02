@@ -5,9 +5,10 @@ Un modèle dynamique fait intervenir des retards sur une ou plusieurs variables 
 * si ces variables sont uniquement exogènes, on parlera de **modèles à retard échelonnés** comme dans la formule simple
 
 $$y_t = c + \sum_{i=0}^r a_i x_{t-i} + \epsilon_t$$
-- $y_t$ valeur à la date $t$
-- $c$ point à l'origine (équivalent de $\beta_0$)
-- $a_i$ (équivalent de $\beta_i$): une unité de plus de $x_{t}$ sur $y_t$, en gardant $x_{t-1}$ constant.
+
+* $y_t$ valeur à la date $t$
+* $c$ point à l'origine (équivalent de $\beta_0$)
+* $a_i$ (équivalent de $\beta_i$): une unité de plus de $x_{t}$ sur $y_t$, en gardant $x_{t-1}$ constant.
 
 Dans ce cas là, seule la valeur $x_{t-i}$ de la période passée impacte la valeur $y_t$ de la période présente. Cependant, ce modèle estimé par les MCO rencontre des problèmes de multicollinéarité (la variable $x_{t-1}$ est un multiple de la variable $x_{t-2}$, etc.), de degrée de liberté, et une tendance non-continuelle des coefficients estimés dans le temps (pas dans le même sens, pas la même ampleur).
 
