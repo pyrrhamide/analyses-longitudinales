@@ -121,16 +121,22 @@
             <section class="normal" id="section-">
 <div id="mod-dyn" class="section level1" number="4">
 <h1><span class="header-section-number">Séance 4</span> Modèles dynamiques</h1>
-<p>Un modèle dynamique fait intervenir des retards sur une ou plusieurs variables (analyse du temps présent en fonction du temps passé):</p>
+<p>Un modèle dynamique fait intervenir des retards sur une ou plusieurs variables (analyse du temps présent en fonction du temps présent ET du temps passé):</p>
 <ul>
 <li>si ces variables sont uniquement exogènes, on parlera de <strong>modèles à retard échelonnés</strong> comme dans la formule simple</li>
 </ul>
-<p><span class="math display">\[y_t = c + \sum_{i=0}^r a_i x_{t-i} + \epsilon_t\]</span></p>
+<p><span class="math display">\[y_t = c + \sum_{i=0}^r a_i x_{t-i} + \epsilon_t\]</span>
+- <span class="math inline">\(y_t\)</span> valeur à la date <span class="math inline">\(t\)</span>
+- <span class="math inline">\(c\)</span> point à l’origine (équivalent de <span class="math inline">\(\beta_0\)</span>)
+- <span class="math inline">\(a_i\)</span> (équivalent de <span class="math inline">\(\beta_i\)</span>): une unité de plus de <span class="math inline">\(x_{t}\)</span> sur <span class="math inline">\(y_t\)</span>, en gardant <span class="math inline">\(x_{t-1}\)</span> constant.</p>
+<p>Dans ce cas là, seule la valeur <span class="math inline">\(x_{t-i}\)</span> de la période passée impacte la valeur <span class="math inline">\(y_t\)</span> de la période présente. Cependant, ce modèle estimé par les MCO rencontre des problèmes de multicollinéarité (la variable <span class="math inline">\(x_{t-1}\)</span> est un multiple de la variable <span class="math inline">\(x_{t-2}\)</span>, etc.), de degrée de liberté, et une tendance non-continuelle des coefficients estimés dans le temps (pas dans le même sens, pas la même ampleur).</p>
 <ul>
-<li>si les variables retardées correspondent à l’endogène, on appellera ces modèles des <strong>modèles autorégressifs</strong></li>
+<li>si les variables retardées correspondent à l’endogène (effet de.s variable.s explicatives s’étend sur plusieurs périodes <span class="math inline">\(t\)</span> d’une manière géométrique), on appellera ces modèles des <strong>modèles autorégressifs</strong></li>
 </ul>
-<p><span class="math display">\[y_t = c + \sum_{i=1}^r a_i x_{t-i} + \epsilon_t \\ou\\ y_t = c+\sum_{i=1}^r a_i y_{t-i}+bx_t + cz_t + \epsilon_t\]</span>
-Dans le cas général, on parlera de modèles autorégressifs et à retards échelonnés:
+<p><span class="math display">\[y_t = c + \sum_{i=1}^r a_i x_{t-i} + \epsilon_t \\ou\\ y_t = c+\sum_{i=1}^r a_i y_{t-i}+bx_t + cz_t + \epsilon_t \\ (y_t = \alpha_0 + \beta_O x_t + \lambda y_{t-1} + u_t)\]</span>
+Ici, le présent ainsi que le passé impactent la période présente (par exemple, en EQ, notre avancement passé <span class="math inline">\(y_{t-1}\)</span>, nos efforts présents <span class="math inline">\(x_t\)</span> ainsi que l’humeur du prof <span class="math inline">\(z_t\)</span> à la date <span class="math inline">\(t\)</span> impactent notre avancement présent <span class="math inline">\(y_t\)</span>).</p>
+<p>Si la période d’examen s’étend, on s’attend à ce que les coefficients <span class="math inline">\(a_i\)</span> diminuent, car la force du passé lointain sur le présent doit normalement moins se ressentir.</p>
+<p>Dans le cas général, on parlera de modèles autorégressifs et à retards échelonnés (ou <strong>modèle dynamique</strong>):
 <span class="math display">\[y_t = c + \sum_{i=1}^r a_iy_{t-i} + \sum_{j=0}^l b_jx_{t-j} + \epsilon_t\]</span>
 à gauche : variables retardées endogènes.
 à droite : retards échelonnés exogènes.</p>
@@ -145,7 +151,7 @@ Dans le cas général, on parlera de modèles autorégressifs et à retards éch
 <span class="math display">\[y_t = a + bx_t + cy_{t-1} + \epsilon_t\]</span></p>
 <p>Question : les erreurs <span class="math inline">\(\epsilon_t\)</span> sont-elles corrélées ? <span class="math inline">\(Cov(\epsilon_t,\epsilon_{t-1} &lt;&gt; 0)\)</span> ?</p>
 <ul>
-<li>si oui (i.e supérieur (différent?) à 0), problème car alors <span class="math inline">\(y_t\)</span> dépend non seulement de <span class="math inline">\(\epsilon_t\)</span> mais aussi de <span class="math inline">\(\epsilon_{t-1},\epsilon_{t-2},\epsilon_{t-3}\)</span>, etc.</li>
+<li>si oui (i.e supérieur (différent?) à 0)<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, problème car alors <span class="math inline">\(y_t\)</span> dépend non seulement de <span class="math inline">\(\epsilon_t\)</span> mais aussi de <span class="math inline">\(\epsilon_{t-1},\epsilon_{t-2},\epsilon_{t-3}\)</span>, etc (corrélation des variables indépendantes avec perturbation + corrélation en série des perturbations =&gt; clashent avec MCO assumptions).</li>
 <li>si non (<span class="math inline">\(Cov(\epsilon_t,\epsilon_{t-1}= 0)\)</span>), alors les MCO sont utilisables.
 <ul>
 <li>mais suppose de <strong>très gros échantillons</strong> pour suffisamment de convergence des estimateurs.</li>
@@ -176,6 +182,13 @@ Dans le cas général, on parlera de modèles autorégressifs et à retards éch
 
 
 
+
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p><em>Lagrange Multiplier (LM)</em> serial correlation test (voir Chapter 12 - <em>Time-series models</em> dans <em>Using Econometrics, A Practical Guide</em> de Studenmund)<a href="mod-dyn.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>

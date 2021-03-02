@@ -1,15 +1,24 @@
 # Modèles dynamiques {#mod-dyn}
 
-Un modèle dynamique fait intervenir des retards sur une ou plusieurs variables (analyse du temps présent en fonction du temps passé):
+Un modèle dynamique fait intervenir des retards sur une ou plusieurs variables (analyse du temps présent en fonction du temps présent ET du temps passé):
 
 * si ces variables sont uniquement exogènes, on parlera de **modèles à retard échelonnés** comme dans la formule simple
 
 $$y_t = c + \sum_{i=0}^r a_i x_{t-i} + \epsilon_t$$
+- $y_t$ valeur à la date $t$
+- $c$ point à l'origine (équivalent de $\beta_0$)
+- $a_i$ (équivalent de $\beta_i$): une unité de plus de $x_{t}$ sur $y_t$, en gardant $x_{t-1}$ constant.
 
-* si les variables retardées correspondent à l'endogène, on appellera ces modèles des **modèles autorégressifs**
+Dans ce cas là, seule la valeur $x_{t-i}$ de la période passée impacte la valeur $y_t$ de la période présente. Cependant, ce modèle estimé par les MCO rencontre des problèmes de multicollinéarité (la variable $x_{t-1}$ est un multiple de la variable $x_{t-2}$, etc.), de degrée de liberté, et une tendance non-continuelle des coefficients estimés dans le temps (pas dans le même sens, pas la même ampleur).
 
-$$y_t = c + \sum_{i=1}^r a_i x_{t-i} + \epsilon_t \\ou\\ y_t = c+\sum_{i=1}^r a_i y_{t-i}+bx_t + cz_t + \epsilon_t$$
-Dans le cas général, on parlera de modèles autorégressifs et à retards échelonnés:
+* si les variables retardées correspondent à l'endogène (effet de.s variable.s explicatives s'étend sur plusieurs périodes $t$ d'une manière géométrique), on appellera ces modèles des **modèles autorégressifs**
+
+$$y_t = c + \sum_{i=1}^r a_i x_{t-i} + \epsilon_t \\ou\\ y_t = c+\sum_{i=1}^r a_i y_{t-i}+bx_t + cz_t + \epsilon_t \\ (y_t = \alpha_0 + \beta_O x_t + \lambda y_{t-1} + u_t)$$
+Ici, le présent ainsi que le passé impactent la période présente (par exemple, en EQ, notre avancement passé $y_{t-1}$, nos efforts présents $x_t$ ainsi que l'humeur du prof $z_t$ à la date $t$ impactent notre avancement présent $y_t$).
+
+Si la période d'examen s'étend, on s'attend à ce que les coefficients $a_i$ diminuent, car la force du passé lointain sur le présent doit normalement moins se ressentir.
+
+Dans le cas général, on parlera de modèles autorégressifs et à retards échelonnés (ou **modèle dynamique**):
 $$y_t = c + \sum_{i=1}^r a_iy_{t-i} + \sum_{j=0}^l b_jx_{t-j} + \epsilon_t$$
 à gauche : variables retardées endogènes.
 à droite : retards échelonnés exogènes.
@@ -25,7 +34,7 @@ $$y_t = a + bx_t + cy_{t-1} + \epsilon_t$$
 
 Question : les erreurs $\epsilon_t$ sont-elles corrélées ? $Cov(\epsilon_t,\epsilon_{t-1} <> 0)$ ?
 
-- si oui (i.e supérieur (différent?) à 0), problème car alors $y_t$ dépend non seulement de $\epsilon_t$ mais aussi de $\epsilon_{t-1},\epsilon_{t-2},\epsilon_{t-3}$, etc. 
+- si oui (i.e supérieur (différent?) à 0)[^1], problème car alors $y_t$ dépend non seulement de $\epsilon_t$ mais aussi de $\epsilon_{t-1},\epsilon_{t-2},\epsilon_{t-3}$, etc (corrélation des variables indépendantes avec perturbation + corrélation en série des perturbations => clashent avec MCO assumptions). 
 - si non ($Cov(\epsilon_t,\epsilon_{t-1}= 0)$), alors les MCO sont utilisables.
   - mais suppose de **très gros échantillons** pour suffisamment de convergence des estimateurs.
   
@@ -43,3 +52,5 @@ Statistique de Durbin-Watson:
   * $Var(a_1)$ la variance estimée du premier retard sur l'endogène.
   
 (problème avec les ^, vérifier les slides pour pas faire de bêtise)
+
+[^1]: *Lagrange Multiplier (LM)* serial correlation test (voir Chapter 12 - *Time-series models* dans *Using Econometrics, A Practical Guide* de Studenmund)
