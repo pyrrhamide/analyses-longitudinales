@@ -35,7 +35,7 @@ $$y_t = a + bx_t + cy_{t-1} + \epsilon_t$$
 
 Question : les erreurs $\epsilon_t$ sont-elles corrélées ? $Cov(\epsilon_t,\epsilon_{t-1} <> 0)$ ?
 
-- si oui (i.e supérieur (différent?) à 0)[^1], problème car alors $y_t$ dépend non seulement de $\epsilon_t$ mais aussi de $\epsilon_{t-1},\epsilon_{t-2},\epsilon_{t-3}$, etc (corrélation des variables indépendantes avec perturbation + corrélation en série des perturbations => clashent avec MCO assumptions). 
+- si oui (i.e supérieur (différent?) à 0)[^2], problème car alors $y_t$ dépend non seulement de $\epsilon_t$ mais aussi de $\epsilon_{t-1},\epsilon_{t-2},\epsilon_{t-3}$, etc (corrélation des variables indépendantes avec perturbation + corrélation en série des perturbations => clashent avec MCO assumptions). 
 - si non ($Cov(\epsilon_t,\epsilon_{t-1}= 0)$), alors les MCO sont utilisables.
   - mais suppose de **très gros échantillons** pour suffisamment de convergence des estimateurs.
   
@@ -54,4 +54,4 @@ Statistique de Durbin-Watson:
   
 (problème avec les ^, vérifier les slides pour pas faire de bêtise)
 
-[^1]: *Lagrange Multiplier (LM)* serial correlation test (voir Chapter 12 - *Time-series models* dans *Using Econometrics, A Practical Guide* de Studenmund)
+[^2]: *Lagrange Multiplier (LM)* serial correlation test (voir Chapter 12 - *Time-series models* dans *Using Econometrics, A Practical Guide* de Studenmund)

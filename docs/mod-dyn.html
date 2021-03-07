@@ -153,7 +153,7 @@ Ici, le présent ainsi que le passé impactent la période présente (par exempl
 <span class="math display">\[y_t = a + bx_t + cy_{t-1} + \epsilon_t\]</span></p>
 <p>Question : les erreurs <span class="math inline">\(\epsilon_t\)</span> sont-elles corrélées ? <span class="math inline">\(Cov(\epsilon_t,\epsilon_{t-1} &lt;&gt; 0)\)</span> ?</p>
 <ul>
-<li>si oui (i.e supérieur (différent?) à 0)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, problème car alors <span class="math inline">\(y_t\)</span> dépend non seulement de <span class="math inline">\(\epsilon_t\)</span> mais aussi de <span class="math inline">\(\epsilon_{t-1},\epsilon_{t-2},\epsilon_{t-3}\)</span>, etc (corrélation des variables indépendantes avec perturbation + corrélation en série des perturbations =&gt; clashent avec MCO assumptions).</li>
+<li>si oui (i.e supérieur (différent?) à 0)<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, problème car alors <span class="math inline">\(y_t\)</span> dépend non seulement de <span class="math inline">\(\epsilon_t\)</span> mais aussi de <span class="math inline">\(\epsilon_{t-1},\epsilon_{t-2},\epsilon_{t-3}\)</span>, etc (corrélation des variables indépendantes avec perturbation + corrélation en série des perturbations =&gt; clashent avec MCO assumptions).</li>
 <li>si non (<span class="math inline">\(Cov(\epsilon_t,\epsilon_{t-1}= 0)\)</span>), alors les MCO sont utilisables.
 <ul>
 <li>mais suppose de <strong>très gros échantillons</strong> pour suffisamment de convergence des estimateurs.</li>
@@ -184,10 +184,11 @@ Ici, le présent ainsi que le passé impactent la période présente (par exempl
 
 
 
+
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p><em>Lagrange Multiplier (LM)</em> serial correlation test (voir Chapter 12 - <em>Time-series models</em> dans <em>Using Econometrics, A Practical Guide</em> de Studenmund)<a href="mod-dyn.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<ol start="2">
+<li id="fn2"><p><em>Lagrange Multiplier (LM)</em> serial correlation test (voir Chapter 12 - <em>Time-series models</em> dans <em>Using Econometrics, A Practical Guide</em> de Studenmund)<a href="mod-dyn.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
