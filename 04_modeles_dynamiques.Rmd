@@ -35,7 +35,7 @@ $$y_t = a + bx_t + cy_{t-1} + \epsilon_t$$
 
 Question : les erreurs $\epsilon_t$ sont-elles corrélées ? $Cov(\epsilon_t,\epsilon_{t-1} \neq 0)$ ?
 
-- si oui (i.e différent de 0)[^2], problème car alors $y_t$ dépend non seulement de $\epsilon_t$ mais aussi de $\epsilon_{t-1},\epsilon_{t-2},\epsilon_{t-3}$, etc (corrélation des variables indépendantes avec perturbation + corrélation en série des perturbations => clashent avec MCO assumptions). 
+- si oui (i.e différent de 0)^[*Lagrange Multiplier (LM)* serial correlation test (voir Chapter 12 - *Time-series models* dans *Using Econometrics, A Practical Guide* de Studenmund)], problème car alors $y_t$ dépend non seulement de $\epsilon_t$ mais aussi de $\epsilon_{t-1},\epsilon_{t-2},\epsilon_{t-3}$, etc (corrélation des variables indépendantes avec perturbation + corrélation en série des perturbations => clashent avec MCO assumptions). 
 - si non ($Cov(\epsilon_t,\epsilon_{t-1}= 0)$), alors les MCO sont utilisables.
   - mais suppose de **très gros échantillons** pour suffisamment de convergence des estimateurs.
   
@@ -54,4 +54,35 @@ Statistique de Durbin-Watson:
   
 (problème avec les ^, vérifier les slides pour pas faire de bêtise)
 
-[^2]: *Lagrange Multiplier (LM)* serial correlation test (voir Chapter 12 - *Time-series models* dans *Using Econometrics, A Practical Guide* de Studenmund)
+## Méthode des moments généralisés (GMM)
+
+Complément sur les [variables instrumentales](https://pyrrhamide.github.io/regressions/mod-id2.html#variables-instrumentales).
+
+Dans toutes les stratégies d'estimation des modèles précédents, une hypothèse:
+
+* les variables explicatives $x_{it}$ sont exogènes, i.e
+
+$$E[\epsilon_{it}|\alpha_i,x_{i1},...x_{it}] = 0, \quad t=1,...T$$
+
+* Que se passe-t-il si ce n'est pas le cas ? i.e. $E[\epsilon_{it}|x_{ijt}] \neq 0$ pour au moins un $j$.
+
+Les MCO ne sont plus utilisables: **estimateurs biaisés**.
+
+Méthode des momment généralisés (GMM) : méthodo d'estimation des différents modèles dynamiques. Généralise les MCO.
+
+Idées des GMM:
+
+* trouver $r$ variables (dites "instruments") $Z_i = \{z_i^1,...,z_i^r\}$ de moment nul $E[Z_i'\epsilon_i] = 0$.
+* Comment les trouver ?
+    * il peut s'agir de certaines variables explicatives $x_i$ dont on suppose l'exogénéité;
+    * d'autres variables, parfois mêmes construites à partir des $x_i$.
+* Avec ces instruments, l'estimateur GMM est calculé en fonction de ces conditions pour minimiser une forme quadratique^[Voir les slides pour l'équation, j'ai la flemme de la retranscrire ici.]
+
+Exogénéité variables explicatives par rapport aux résidus fondamentale pour MCO (utile pour le within aussi?). Arrive souvent que cette hypothèse soit pas respectée. Variables endogènes; causalité inverse variable expliquée sur variables explicatives. MCO ne sont plus utilisables.
+
+Plusieurs cas:
+
+* r=K ou dim(r)=dim(X) : modèle "juste identifié". Autant d'instruments que de var explicatives, l'estimation se fait "simplement" en une étape.
+* r>K ou dim(r)>dim(X) : modèle "sur-déterminé". Instruments > var explicatives. Il y a "trop" de variables, nécessité de procéder en 2 étapes:
+    * **Etape 1** : équation d'instrumentation. Chaque régresseur **endogène** $X_j$ est régressé sur tous les instruments $Z$ et tous les régresseurs exogènes $X_j$. $x_j = Z \gamma_j + X_j \delta_j + \mu_j$. Les valeurs prédites $\hat x_j = Z \hat \gamma_j + X_j \hat \delta_j$ sont des instruments valides pour les $X_j$ endogènes.
+    * **Etape 2** : $Y$ est régressé sur les valeurs prédites.

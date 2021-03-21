@@ -101,6 +101,23 @@
 <li class="chapter" data-level="4" data-path="mod-dyn.html"><a href="mod-dyn.html"><i class="fa fa-check"></i><b>4</b> Modèles dynamiques</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="mod-dyn.html"><a href="mod-dyn.html#les-modèles-dynamiques-autorégressifs"><i class="fa fa-check"></i><b>4.1</b> Les modèles dynamiques autorégressifs</a></li>
+<li class="chapter" data-level="4.2" data-path="mod-dyn.html"><a href="mod-dyn.html#méthode-des-moments-généralisés-gmm"><i class="fa fa-check"></i><b>4.2</b> Méthode des moments généralisés (GMM)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mod-non-lin.html"><a href="mod-non-lin.html"><i class="fa fa-check"></i><b>5</b> Modèles non-linéaires</a></li>
+<li class="chapter" data-level="6" data-path="mod-duree.html"><a href="mod-duree.html"><i class="fa fa-check"></i><b>6</b> Modèles de durée</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="mod-duree.html"><a href="mod-duree.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="mod-duree.html"><a href="mod-duree.html#exemple-dune-problématique"><i class="fa fa-check"></i><b>6.2</b> Exemple d’une problématique</a></li>
+<li class="chapter" data-level="6.3" data-path="mod-duree.html"><a href="mod-duree.html#censures"><i class="fa fa-check"></i><b>6.3</b> Censures</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="mod-duree.html"><a href="mod-duree.html#censure-de-type-i---fixée"><i class="fa fa-check"></i><b>6.3.1</b> Censure de type I - fixée</a></li>
+<li class="chapter" data-level="6.3.2" data-path="mod-duree.html"><a href="mod-duree.html#censure-de-type-ii---attente"><i class="fa fa-check"></i><b>6.3.2</b> Censure de type II - attente</a></li>
+<li class="chapter" data-level="6.3.3" data-path="mod-duree.html"><a href="mod-duree.html#censure-de-type-iii---aléatoire"><i class="fa fa-check"></i><b>6.3.3</b> Censure de type III - aléatoire</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="mod-duree.html"><a href="mod-duree.html#traitement-des-données-censurées"><i class="fa fa-check"></i><b>6.4</b> Traitement des données censurées</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="mod-duree.html"><a href="mod-duree.html#construction-de-lestimateur-de-kaplan-meier"><i class="fa fa-check"></i><b>6.4.1</b> Construction de l’estimateur de Kaplan-Meier</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -163,7 +180,7 @@ S’il existe bien une relation identique entre âge et UC pour tous les individ
 </div>
 <div id="modèles-à-effets-fixes-phase-2" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Modèles à <strong>effets fixes</strong> (phase 2)</h2>
-<p>ou modèle à effet individuel.</p>
+<p>ou modèle à effet individuel. L’utilisation des effets fixes, contrairement aux effets aléatoires, est nécessaire lorsque des variables explicatives (spécifiques aux individus et les autres variables indépendantes) sont corrélées entre elles. Ces modèles contrôlent l’effet des variables omises dû à l’hétérogénéité individuelle inobservée constante dans le temps. Cette hétérogénéité peut être enlever des données en soustrayant la moyenne par groupe, ou en effectuant un modèle des différences premières qui enlevera toutes les composantes invariables dans le temps.</p>
 <p>Si seuls les <span class="math inline">\(\alpha_i\)</span> dépendent de <span class="math inline">\(i\)</span>:
 <span class="math display">\[y_{i,t} = \alpha_i + \beta k_{i,t} + \gamma n_{i,t} + \epsilon_{i,t}\]</span>
 Pour tous les individus <span class="math inline">\(i\)</span>, les variables explicatives temporelles jouent de la même façon <em>et</em> il existe des différences structurelles entre les individus.<br />
@@ -191,11 +208,12 @@ On utilise une <em>statistique de Fischer</em> pour tester les restrictions lin�
 <p>Dans le cas “effets fixes”
 <span class="math display">\[y_{i,t} = \alpha_i + \beta&#39; x_{i,t} + \epsilon_{i,t} \quad \forall i \in [1,N], \forall t \in [1,T]\]</span></p>
 <p>Les <span class="math inline">\(\beta\)</span> peuvent être obtenus à partir de MCO calculés sur le modèle suivant:
-<span class="math display">\[(y_{i,t}-\bar y_i) = \beta&#39;(x_{i,t} - \bar x_i) + \epsilon_{i,t} \quad \forall i \in [1,N], \forall t \in [1,T]\]</span>
-L’estimation du modèle à effet fixe estimé en “within” se fait par élimination de l’effet fixe par l’opérateur de projection « within », ce qui revient à estimer par les moindres carrés ordinaires un modèle dans lequel toutes les variables sont remplacées par leurs différences à leurs moyennes pour l’individu considéré. Les réalisations des estimateurs des constantes <span class="math inline">\(\alpha_i\)</span> sont alors déduits de la relation :
+<span class="math display">\[(y_{i,t}-\bar y_i) = \beta&#39;(x_{i,t} - \bar x_i) + (\alpha_i - \bar alpha_i) + \epsilon_{i,t} \quad \forall i \in [1,N], \forall t \in [1,T] \\
+\Rightarrow y&#39;_{it} = \beta X&#39;_{it} + \epsilon&#39;_{it}\]</span></p>
+<p><span class="math inline">\(\alpha_i\)</span> étant constant dans le temps, <span class="math inline">\(\bar \alpha_i = \alpha_i\)</span> et l’effet fixe est donc éliminé. <span class="math inline">\(\beta\)</span> peut être obtenu en effectuant une régression en MCO de <span class="math inline">\(y&#39;\)</span> sur <span class="math inline">\(X&#39;\)</span>.</p>
+<p>L’estimation du modèle à effet fixe estimé en “within” se fait par élimination de l’effet fixe par l’opérateur de projection « within », ce qui revient à estimer par les moindres carrés ordinaires un modèle dans lequel toutes les variables sont remplacées par leurs différences à leurs moyennes pour l’individu considéré. Les réalisations des estimateurs des constantes <span class="math inline">\(\alpha_i\)</span> sont alors déduits de la relation :
 <span class="math display">\[\alpha_i = \bar y_i - \beta&#39; \bar x_i\]</span>
-L’estimation de ce modèle ne requiert donc aucune hypothèse particulière sur la corrélation (ou plutôt l’absence de corrélation) entre l’effet fixe <span class="math inline">\(a_i\)</span> et les autres variables explicatives.</p>
-<p>MOYENNE DES <span class="math inline">\(a_i\)</span> EST EGALE A <span class="math inline">\(a\)</span>!!!!!!</p>
+L’estimation de ce modèle ne requiert donc aucune hypothèse particulière sur la corrélation (ou plutôt l’absence de corrélation) entre l’effet fixe <span class="math inline">\(\alpha_i\)</span> et les autres variables explicatives.</p>
 
 </div>
 </div>

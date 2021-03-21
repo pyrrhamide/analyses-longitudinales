@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="presentation.html"/>
-
+<link rel="next" href="mod-non-lin.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -101,6 +101,23 @@
 <li class="chapter" data-level="4" data-path="mod-dyn.html"><a href="mod-dyn.html"><i class="fa fa-check"></i><b>4</b> Modèles dynamiques</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="mod-dyn.html"><a href="mod-dyn.html#les-modèles-dynamiques-autorégressifs"><i class="fa fa-check"></i><b>4.1</b> Les modèles dynamiques autorégressifs</a></li>
+<li class="chapter" data-level="4.2" data-path="mod-dyn.html"><a href="mod-dyn.html#méthode-des-moments-généralisés-gmm"><i class="fa fa-check"></i><b>4.2</b> Méthode des moments généralisés (GMM)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mod-non-lin.html"><a href="mod-non-lin.html"><i class="fa fa-check"></i><b>5</b> Modèles non-linéaires</a></li>
+<li class="chapter" data-level="6" data-path="mod-duree.html"><a href="mod-duree.html"><i class="fa fa-check"></i><b>6</b> Modèles de durée</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="mod-duree.html"><a href="mod-duree.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="mod-duree.html"><a href="mod-duree.html#exemple-dune-problématique"><i class="fa fa-check"></i><b>6.2</b> Exemple d’une problématique</a></li>
+<li class="chapter" data-level="6.3" data-path="mod-duree.html"><a href="mod-duree.html#censures"><i class="fa fa-check"></i><b>6.3</b> Censures</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="mod-duree.html"><a href="mod-duree.html#censure-de-type-i---fixée"><i class="fa fa-check"></i><b>6.3.1</b> Censure de type I - fixée</a></li>
+<li class="chapter" data-level="6.3.2" data-path="mod-duree.html"><a href="mod-duree.html#censure-de-type-ii---attente"><i class="fa fa-check"></i><b>6.3.2</b> Censure de type II - attente</a></li>
+<li class="chapter" data-level="6.3.3" data-path="mod-duree.html"><a href="mod-duree.html#censure-de-type-iii---aléatoire"><i class="fa fa-check"></i><b>6.3.3</b> Censure de type III - aléatoire</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="mod-duree.html"><a href="mod-duree.html#traitement-des-données-censurées"><i class="fa fa-check"></i><b>6.4</b> Traitement des données censurées</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="mod-duree.html"><a href="mod-duree.html#construction-de-lestimateur-de-kaplan-meier"><i class="fa fa-check"></i><b>6.4.1</b> Construction de l’estimateur de Kaplan-Meier</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -153,7 +170,7 @@ Ici, le présent ainsi que le passé impactent la période présente (par exempl
 <span class="math display">\[y_t = a + bx_t + cy_{t-1} + \epsilon_t\]</span></p>
 <p>Question : les erreurs <span class="math inline">\(\epsilon_t\)</span> sont-elles corrélées ? <span class="math inline">\(Cov(\epsilon_t,\epsilon_{t-1} \neq 0)\)</span> ?</p>
 <ul>
-<li>si oui (i.e différent de 0)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, problème car alors <span class="math inline">\(y_t\)</span> dépend non seulement de <span class="math inline">\(\epsilon_t\)</span> mais aussi de <span class="math inline">\(\epsilon_{t-1},\epsilon_{t-2},\epsilon_{t-3}\)</span>, etc (corrélation des variables indépendantes avec perturbation + corrélation en série des perturbations =&gt; clashent avec MCO assumptions).</li>
+<li>si oui (i.e différent de 0)<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, problème car alors <span class="math inline">\(y_t\)</span> dépend non seulement de <span class="math inline">\(\epsilon_t\)</span> mais aussi de <span class="math inline">\(\epsilon_{t-1},\epsilon_{t-2},\epsilon_{t-3}\)</span>, etc (corrélation des variables indépendantes avec perturbation + corrélation en série des perturbations =&gt; clashent avec MCO assumptions).</li>
 <li>si non (<span class="math inline">\(Cov(\epsilon_t,\epsilon_{t-1}= 0)\)</span>), alors les MCO sont utilisables.
 <ul>
 <li>mais suppose de <strong>très gros échantillons</strong> pour suffisamment de convergence des estimateurs.</li>
@@ -175,19 +192,48 @@ Ici, le présent ainsi que le passé impactent la période présente (par exempl
 <li><span class="math inline">\(Var(a_1)\)</span> la variance estimée du premier retard sur l’endogène.</li>
 </ul>
 <p>(problème avec les ^, vérifier les slides pour pas faire de bêtise)</p>
+</div>
+<div id="méthode-des-moments-généralisés-gmm" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Méthode des moments généralisés (GMM)</h2>
+<p>Complément sur les <a href="https://pyrrhamide.github.io/regressions/mod-id2.html#variables-instrumentales">variables instrumentales</a>.</p>
+<p>Dans toutes les stratégies d’estimation des modèles précédents, une hypothèse:</p>
+<ul>
+<li>les variables explicatives <span class="math inline">\(x_{it}\)</span> sont exogènes, i.e</li>
+</ul>
+<p><span class="math display">\[E[\epsilon_{it}|\alpha_i,x_{i1},...x_{it}] = 0, \quad t=1,...T\]</span></p>
+<ul>
+<li>Que se passe-t-il si ce n’est pas le cas ? i.e. <span class="math inline">\(E[\epsilon_{it}|x_{ijt}] \neq 0\)</span> pour au moins un <span class="math inline">\(j\)</span>.</li>
+</ul>
+<p>Les MCO ne sont plus utilisables: <strong>estimateurs biaisés</strong>.</p>
+<p>Méthode des momment généralisés (GMM) : méthodo d’estimation des différents modèles dynamiques. Généralise les MCO.</p>
+<p>Idées des GMM:</p>
+<ul>
+<li>trouver <span class="math inline">\(r\)</span> variables (dites “instruments”) <span class="math inline">\(Z_i = \{z_i^1,...,z_i^r\}\)</span> de moment nul <span class="math inline">\(E[Z_i&#39;\epsilon_i] = 0\)</span>.</li>
+<li>Comment les trouver ?
+<ul>
+<li>il peut s’agir de certaines variables explicatives <span class="math inline">\(x_i\)</span> dont on suppose l’exogénéité;</li>
+<li>d’autres variables, parfois mêmes construites à partir des <span class="math inline">\(x_i\)</span>.</li>
+</ul></li>
+<li>Avec ces instruments, l’estimateur GMM est calculé en fonction de ces conditions pour minimiser une forme quadratique<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></li>
+</ul>
+<p>Exogénéité variables explicatives par rapport aux résidus fondamentale pour MCO (utile pour le within aussi?). Arrive souvent que cette hypothèse soit pas respectée. Variables endogènes; causalité inverse variable expliquée sur variables explicatives. MCO ne sont plus utilisables.</p>
+<p>Plusieurs cas:</p>
+<ul>
+<li>r=K ou dim(r)=dim(X) : modèle “juste identifié”. Autant d’instruments que de var explicatives, l’estimation se fait “simplement” en une étape.</li>
+<li>r&gt;K ou dim(r)&gt;dim(X) : modèle “sur-déterminé”. Instruments &gt; var explicatives. Il y a “trop” de variables, nécessité de procéder en 2 étapes:
+<ul>
+<li><strong>Etape 1</strong> : équation d’instrumentation. Chaque régresseur <strong>endogène</strong> <span class="math inline">\(X_j\)</span> est régressé sur tous les instruments <span class="math inline">\(Z\)</span> et tous les régresseurs exogènes <span class="math inline">\(X_j\)</span>. <span class="math inline">\(x_j = Z \gamma_j + X_j \delta_j + \mu_j\)</span>. Les valeurs prédites <span class="math inline">\(\hat x_j = Z \hat \gamma_j + X_j \hat \delta_j\)</span> sont des instruments valides pour les <span class="math inline">\(X_j\)</span> endogènes.</li>
+<li><strong>Etape 2</strong> : <span class="math inline">\(Y\)</span> est régressé sur les valeurs prédites.</li>
+</ul></li>
+</ul>
 
 </div>
 </div>
-
-
-
-
-
-
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p><em>Lagrange Multiplier (LM)</em> serial correlation test (voir Chapter 12 - <em>Time-series models</em> dans <em>Using Econometrics, A Practical Guide</em> de Studenmund)<a href="mod-dyn.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<ol start="2">
+<li id="fn2"><p><em>Lagrange Multiplier (LM)</em> serial correlation test (voir Chapter 12 - <em>Time-series models</em> dans <em>Using Econometrics, A Practical Guide</em> de Studenmund)<a href="mod-dyn.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Voir les slides pour l’équation, j’ai la flemme de la retranscrire ici.<a href="mod-dyn.html#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -195,8 +241,8 @@ Ici, le présent ainsi que le passé impactent la période présente (par exempl
           </div>
         </div>
       </div>
-<a href="presentation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="presentation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mod-non-lin.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Séance 6 Modèles de durée | Analyses longitudinales</title>
+  <meta name="description" content="Séance 6 Modèles de durée | Analyses longitudinales" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Séance 6 Modèles de durée | Analyses longitudinales" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="pyrrhamide/analyses-longitudinales" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Séance 6 Modèles de durée | Analyses longitudinales" />
+  
+  
+  
+
+<meta name="author" content="KF" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="mod-non-lin.html"/>
+
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html">Analyses longitudinales</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a></li>
+<li class="chapter" data-level="1" data-path="pano.html"><a href="pano.html"><i class="fa fa-check"></i><b>1</b> Panorama des méthodes pour les analyses longitudinales</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="pano.html"><a href="pano.html#intérêt-des-études-longitudinales"><i class="fa fa-check"></i><b>1.1</b> Intérêt des études longitudinales</a></li>
+<li class="chapter" data-level="1.2" data-path="pano.html"><a href="pano.html#limites-des-études-longitudinales"><i class="fa fa-check"></i><b>1.2</b> Limites des études longitudinales</a></li>
+<li class="chapter" data-level="1.3" data-path="pano.html"><a href="pano.html#modélisations-sur-données-longitudinales-économétrie-des-panels-et-modèles-de-durée"><i class="fa fa-check"></i><b>1.3</b> Modélisations sur données longitudinales : économétrie des panels et modèles de durée</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="pseudo-panel.html"><a href="pseudo-panel.html"><i class="fa fa-check"></i><b>2</b> Pseudo-panels</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="pseudo-panel.html"><a href="pseudo-panel.html#application-des-modèles-linéaires-aux-pseudo-panels"><i class="fa fa-check"></i><b>2.1</b> Application des modèles linéaires aux pseudo-panels</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="mod-lin.html"><a href="mod-lin.html"><i class="fa fa-check"></i><b>3</b> Modèles linéaires</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="mod-lin.html"><a href="mod-lin.html#modèles-pooled-phase-1"><i class="fa fa-check"></i><b>3.1</b> Modèles <strong>pooled</strong> (phase 1)</a></li>
+<li class="chapter" data-level="3.2" data-path="mod-lin.html"><a href="mod-lin.html#modèles-à-effets-fixes-phase-2"><i class="fa fa-check"></i><b>3.2</b> Modèles à <strong>effets fixes</strong> (phase 2)</a></li>
+<li class="chapter" data-level="3.3" data-path="mod-lin.html"><a href="mod-lin.html#estimation-within-du-modèle-à-effet-fixe"><i class="fa fa-check"></i><b>3.3</b> Estimation “within” du modèle à effet fixe</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="presentation.html"><a href="presentation.html"><i class="fa fa-check"></i>Présentation article</a>
+<ul>
+<li class="chapter" data-level="3.4" data-path="presentation.html"><a href="presentation.html#objet-de-recherche"><i class="fa fa-check"></i><b>3.4</b> Objet de recherche</a></li>
+<li class="chapter" data-level="3.5" data-path="presentation.html"><a href="presentation.html#questions-de-recherche"><i class="fa fa-check"></i><b>3.5</b> Questions de recherche</a></li>
+<li class="chapter" data-level="3.6" data-path="presentation.html"><a href="presentation.html#données-mobilisées"><i class="fa fa-check"></i><b>3.6</b> Données mobilisées</a></li>
+<li class="chapter" data-level="3.7" data-path="presentation.html"><a href="presentation.html#méthodologie"><i class="fa fa-check"></i><b>3.7</b> Méthodologie</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="presentation.html"><a href="presentation.html#intérets-de-ces-choix-de-méthodes"><i class="fa fa-check"></i><b>3.7.1</b> Intérets de ces choix de méthodes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="presentation.html"><a href="presentation.html#résultats"><i class="fa fa-check"></i><b>3.8</b> Résultats</a></li>
+<li class="chapter" data-level="3.9" data-path="presentation.html"><a href="presentation.html#conclusion"><i class="fa fa-check"></i><b>3.9</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="mod-dyn.html"><a href="mod-dyn.html"><i class="fa fa-check"></i><b>4</b> Modèles dynamiques</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="mod-dyn.html"><a href="mod-dyn.html#les-modèles-dynamiques-autorégressifs"><i class="fa fa-check"></i><b>4.1</b> Les modèles dynamiques autorégressifs</a></li>
+<li class="chapter" data-level="4.2" data-path="mod-dyn.html"><a href="mod-dyn.html#méthode-des-moments-généralisés-gmm"><i class="fa fa-check"></i><b>4.2</b> Méthode des moments généralisés (GMM)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mod-non-lin.html"><a href="mod-non-lin.html"><i class="fa fa-check"></i><b>5</b> Modèles non-linéaires</a></li>
+<li class="chapter" data-level="6" data-path="mod-duree.html"><a href="mod-duree.html"><i class="fa fa-check"></i><b>6</b> Modèles de durée</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="mod-duree.html"><a href="mod-duree.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="mod-duree.html"><a href="mod-duree.html#exemple-dune-problématique"><i class="fa fa-check"></i><b>6.2</b> Exemple d’une problématique</a></li>
+<li class="chapter" data-level="6.3" data-path="mod-duree.html"><a href="mod-duree.html#censures"><i class="fa fa-check"></i><b>6.3</b> Censures</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="mod-duree.html"><a href="mod-duree.html#censure-de-type-i---fixée"><i class="fa fa-check"></i><b>6.3.1</b> Censure de type I - fixée</a></li>
+<li class="chapter" data-level="6.3.2" data-path="mod-duree.html"><a href="mod-duree.html#censure-de-type-ii---attente"><i class="fa fa-check"></i><b>6.3.2</b> Censure de type II - attente</a></li>
+<li class="chapter" data-level="6.3.3" data-path="mod-duree.html"><a href="mod-duree.html#censure-de-type-iii---aléatoire"><i class="fa fa-check"></i><b>6.3.3</b> Censure de type III - aléatoire</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="mod-duree.html"><a href="mod-duree.html#traitement-des-données-censurées"><i class="fa fa-check"></i><b>6.4</b> Traitement des données censurées</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="mod-duree.html"><a href="mod-duree.html#construction-de-lestimateur-de-kaplan-meier"><i class="fa fa-check"></i><b>6.4.1</b> Construction de l’estimateur de Kaplan-Meier</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Analyses longitudinales</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="mod-duree" class="section level1" number="6">
+<h1><span class="header-section-number">Séance 6</span> Modèles de durée</h1>
+<div id="introduction" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Introduction</h2>
+<p>Nouveau cadre d’analyse:</p>
+<ul>
+<li>Ici, il s’agit d’étudier le <strong>temps écoulé</strong> jusqu’à la survenue d’un évènement précis: décès, retour à l’emploi, mise en couple, arrivé du premier enfant, etc.</li>
+<li>Les modèles de durée: l’analyse des données (durées) de survie est l’étude du délai de la survenue de cette évènement. Dans le domaine biomédical, on étudie ces durées dans le contexte des études longitudinales comme les enquêtes de cohorte (suivi de patients dans le temps) ou les essais thérapeutiques (tester l’efficacité d’un médicament). On cherche alors à estimer la distribution des temps de survie (fonction de survie), à comparer les fonctions de survie de plusieurs groupes ou à analyser la manière dont les variables explicatives modifient les fonctions de survie.</li>
+</ul>
+<p>On distingue l’évènement d’intérêt (décès, mise en couple, retour à l’emploi, déménagement…) de la variable à expliquer (durée avant l’apparition de l’évènement):</p>
+<ul>
+<li>temps écoulé avant le décès,</li>
+<li>temps de célibat,</li>
+<li>temps sans emploi,</li>
+<li>temps passé dans le logement…</li>
+</ul>
+<p><strong>Définition</strong></p>
+<ul>
+<li>La durée de survie désigne le temps qui s’écoule depuis un instant initial (début du traitement, diagnostic…), jusqu’à la survenue d’un évènement d’intérêt final (décès du patient, retour à l’emploi, mise en couple…).</li>
+<li>La variable étudiée est appelée <strong><em>durée de vie</em></strong> T.</li>
+</ul>
+<p><strong>Remarque</strong>: T est une variable aléatoire positive et continue.</p>
+</div>
+<div id="exemple-dune-problématique" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Exemple d’une problématique</h2>
+<p>Supposons que l’étude s’intéresse aux comportements de mise en couple des hommes et des femmes. Deux questions se posent:</p>
+<ul>
+<li>Question 1: les durées de mise en couple sont-elles significativement différentes pour les hommes et les femmes ?</li>
+<li>Question 2: peut-on mettre en évidence des facteurs déterminant ✨ <em>toutes choses égales par ailleurs</em> ✨ dans ces comportements ?</li>
+</ul>
+<p>Exemples: âge, niveau de diplôme, CS…</p>
+<p>Dans la “vraie vie”, il est rare que l’on puisse observer toutes les durées de survie jusqu’à leur terme, parce que:</p>
+<ul>
+<li>dispositif d’observation borné dans le temps,</li>
+<li>phénomènes potentiellement de longue durée et/ou avec une forte variance,</li>
+<li>certaines personnes sont perdues de vue (déménagement).</li>
+</ul>
+<p>On parle alors de <strong>données censurées</strong>.</p>
+</div>
+<div id="censures" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Censures</h2>
+<p>Les différents types de censure:</p>
+<ul>
+<li>censure de type I: fixée.</li>
+<li>censure de type II: attente.</li>
+<li>censure de type III: aléatoire (à droite ou à gauche ou par intervalle).</li>
+</ul>
+<div id="censure-de-type-i---fixée" class="section level3" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Censure de type I - fixée</h3>
+<p>La durée n’est pas observable au delà d’une durée maximale, fixe. Au lieu d’observer <span class="math inline">\(T_1,...,T_n\)</span>, on observe :
+<span class="math display">\[X_i= min(T_i,C), \quad i=1,...n\]</span>
+où <span class="math inline">\(C\)</span> est une censure fixe (“à droite”).</p>
+<p>La durée n’est pas observable avant une date fixe. Au lieu d’observer <span class="math inline">\(T_1,...T_n\)</span>, on observe :
+<span class="math display">\[X_i= max(T_i,C), \quad i=1,...,n\]</span>
+où <span class="math inline">\(C\)</span> est une censure fixe (“à gauche”).</p>
+<p>censure par intervalle (censure à gauche et à droite - pas d’observation avant date <span class="math inline">\(t\)</span> et après date <span class="math inline">\(v\)</span>)</p>
+</div>
+<div id="censure-de-type-ii---attente" class="section level3" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Censure de type II - attente</h3>
+<p>On observe les durées de vie de <span class="math inline">\(n\)</span> individus jusqu’à ce que <span class="math inline">\(R\)</span> individus aient vu l’évènement d’intérêt se produire (e.g. décès).</p>
+<p>Au lieu d’observer <span class="math inline">\(T_1,...,T_n\)</span>, on observe : <span class="math inline">\(T_1 \leq T_2 \leq ... \leq T_R\)</span>.</p>
+<p>censure pas sur lapse de temps mais sur lapse d’individus.</p>
+</div>
+<div id="censure-de-type-iii---aléatoire" class="section level3" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Censure de type III - aléatoire</h3>
+<p><strong>Censure aléatoire à droite</strong>: au lieu d’observer <span class="math inline">\(T_1,...,T_n\)</span>, on observe:
+<span class="math display">\[X_i=min(T_i,C_i), et \ \delta_i = 1_{T_i \leq C_i} \ pour \ i = 1,...,n\]</span>
+où <span class="math inline">\(C_i\)</span> est une censure aléatoire.</p>
+<ul>
+<li><span class="math inline">\(T_i\)</span> le temps de survie de l’individu <span class="math inline">\(i\)</span>,</li>
+<li><span class="math inline">\(C_i\)</span> le temps de censure de l’individu <span class="math inline">\(i\)</span>,</li>
+<li><span class="math inline">\(\delta_i\)</span> l’indicateur de censure de l’individu <span class="math inline">\(i\)</span>.</li>
+</ul>
+<p><span class="math inline">\(\rightarrow\)</span> pour certains individus, on n’observe pas la date de l’évènement. e.g: observation de la date de mise en couple, lorsque déménagement.</p>
+<p><em>Définition</em>: la durée T est dite censurée aléatoirement à droite si au lieu d’observer <span class="math inline">\(T_1,...T_n\)</span>, on observe:
+<span class="math display">\[(X_i,\delta_i),i=1,...,n\ où\ X_i=min(T_i,C_i),\delta_i=1_{T_i \leq C_i}\]</span>
+et <span class="math inline">\(C_i\)</span> est une censure aléatoire.</p>
+<p><strong>Censure aléatoire à gauche</strong>: au lieu d’observer <span class="math inline">\(T_1,...,T_n\)</span>, on observe:
+<span class="math display">\[X_i=max(T_i,C_i), et \ \delta_i = 1_{T_i \geq C_i} \ pour \ i = 1,...,n\]</span>
+où <span class="math inline">\(C_i\)</span> est une censure aléatoire.</p>
+<p><span class="math inline">\(\rightarrow\)</span> pour certains individus, on n’observe pas la date d’origine. e.g: T durée depuis l’infection par le VIH, mais date d’infection inconnue.</p>
+<p><em>Définition</em>: la durée T est dite censurée aléatoirement à gauche si au lieu d’observer <span class="math inline">\(T_1,...T_n\)</span>, on observe:
+<span class="math display">\[(X_i,\delta_i),i=1,...,n\ où\ X_i=max(T_i,C_i),\delta_i=1_{T_i \geq C_i}\]</span>
+et <span class="math inline">\(C_i\)</span> est une censure aléatoire.</p>
+<p><strong>Censure par intervalle</strong>: censure à gauche et à droite.</p>
+<p><span class="math inline">\(\rightarrow\)</span> pour certains individus, on n’observe pas la date d’origine et/ou la date de l’évènement final : censure aléatoire à gauche et à droite. On n’observe que le temps écoulé entre deux dates connues. e.g: observation de la date de mise en couple, lorsque déménagement.</p>
+<p><em>Définition</em>: la durée T est dite censurée par intervalle si au lieu d’observer <span class="math inline">\(T_1,...T_n\)</span>, on observe <span class="math inline">\((X_i,\delta_i),i=1,...,n\)</span> où:</p>
+<ul>
+<li><span class="math inline">\(X_i=max(min(T_i,C_i^D),C_i^G)-C_i^D\)</span> et <span class="math inline">\(C_i^G\)</span> sont des censures aléatoires.</li>
+<li><span class="math inline">\(\delta_i=1\)</span> si <span class="math inline">\(T_i\)</span> est observé,</li>
+<li>0 si <span class="math inline">\(T_i\)</span> est censuré à droite,</li>
+<li>-1 si <span class="math inline">\(T_i\)</span> est censuré à gauche.</li>
+</ul>
+<p>Censure aléatoire à gauche : suivi médical, personne déclarée positive à une maladie. On sait qu’elle est malade maintenant mais on ne sait pas à quand remonte l’infection.</p>
+</div>
+</div>
+<div id="traitement-des-données-censurées" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Traitement des données censurées</h2>
+<p><strong>Fonctions essentielles</strong>:</p>
+<ul>
+<li>la fonction de survie <span class="math inline">\(S(t) = P(T&gt;t)\)</span>,</li>
+<li>la fonction de répartition <span class="math inline">\(F(t) = P(T \leq t)\)</span>,</li>
+<li>la densité <span class="math inline">\(f(t)\)</span> avec <span class="math inline">\(F(t)= \int_0^t f(x)dx, \ t \geq 0\)</span>,</li>
+<li>le risque instantané de décès <span class="math inline">\(h(t)\)</span>,</li>
+<li>le risque cumulé de décès <span class="math inline">\(H(t)\)</span>.</li>
+</ul>
+<p>Ces 5 fonctions caractérisent la loi de T. Elles sont inconnues. On va les estimer en utilisant les observations (autre longue équation)…</p>
+<p>Si les données ne sont pas censurées, <span class="math inline">\(S(t)\)</span> peut être estimée par la proportion d’individus ayant survécu à l’instant <span class="math inline">\(t\)</span>, càd par…</p>
+<p>Si les données sont censurées, l’estimation de la fonction de survie nécessite des outils spécifiques.</p>
+<p>On peut par ailleurs montrer que le temps moyen de survie <span class="math inline">\(E(X)\)</span> et la variance de durée de survie <span class="math inline">\(V(X)\)</span> sont définis pas les quantités suivantes:…</p>
+<div id="construction-de-lestimateur-de-kaplan-meier" class="section level3" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Construction de l’estimateur de Kaplan-Meier</h3>
+<p>L’estimateur KM découle de l’idée: survivre après un temps <span class="math inline">\(t\)</span> c’est être en vie juste avant <span class="math inline">\(t\)</span> et ne pas mourir au temps <span class="math inline">\(t\)</span>, càd, si <span class="math inline">\(t&#39;&#39;&lt;t&#39;&lt;t\)</span></p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="mod-non-lin.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pyrrhamide/analyses-longitudinales/blob/main/06_modeles_de_duree.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

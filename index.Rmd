@@ -19,8 +19,8 @@ github-repo: pyrrhamide/analyses-longitudinales
 - [Séance 2](#pseudo-panel): pseudo-panels
 - [Séance 3](#mod-lin): modèles linéaires ([article présentation](#presentation))
 - [Séance 4](#mod-dyn): modèles dynamiques
-- Séance 5: modèles non-linéaires
-- Séance 6: modèles de durée
+- [Séance 5](#mod-non-lin): modèles non-linéaires
+- [Séance 6](#mod-duree): modèles de durée
 - Séance 7: optimal matching
 - Séance 8: retour critique sur les méthodes
 

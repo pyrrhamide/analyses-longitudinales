@@ -1,0 +1,127 @@
+# Modèles de durée {#mod-duree}
+
+## Introduction
+
+Nouveau cadre d'analyse:
+
+* Ici, il s'agit d'étudier le **temps écoulé** jusqu'à la survenue d'un évènement précis: décès, retour à l'emploi, mise en couple, arrivé du premier enfant, etc.
+* Les modèles de durée: l'analyse des données (durées) de survie est l'étude du délai de la survenue de cette évènement. Dans le domaine biomédical, on étudie ces durées dans le contexte des études longitudinales comme les enquêtes de cohorte (suivi de patients dans le temps) ou les essais thérapeutiques (tester l'efficacité d'un médicament). On cherche alors à estimer la distribution des temps de survie (fonction de survie), à comparer les fonctions de survie de plusieurs groupes ou à analyser la manière dont les variables explicatives modifient les fonctions de survie.
+
+On distingue l'évènement d'intérêt (décès, mise en couple, retour à l'emploi, déménagement...) de la variable à expliquer (durée avant l'apparition de l'évènement):
+
+* temps écoulé avant le décès,
+* temps de célibat,
+* temps sans emploi,
+* temps passé dans le logement...
+
+**Définition**
+
+* La durée de survie désigne le temps qui s'écoule depuis un instant initial (début du traitement, diagnostic...), jusqu'à la survenue d'un évènement d'intérêt final (décès du patient, retour à l'emploi, mise en couple...).
+* La variable étudiée est appelée ***durée de vie*** T.
+
+**Remarque**: T est une variable aléatoire positive et continue.
+
+## Exemple d'une problématique
+
+Supposons que l'étude s'intéresse aux comportements de mise en couple des hommes et des femmes. Deux questions se posent:
+
+* Question 1: les durées de mise en couple sont-elles significativement différentes pour les hommes et les femmes ?
+* Question 2: peut-on mettre en évidence des facteurs déterminant `r emo::ji("sparkles")` *toutes choses égales par ailleurs* `r emo::ji("sparkles")` dans ces comportements ?
+
+Exemples: âge, niveau de diplôme, CS...
+
+Dans la "vraie vie", il est rare que l'on puisse observer toutes les durées de survie jusqu'à leur terme, parce que:
+
+* dispositif d'observation borné dans le temps,
+* phénomènes potentiellement de longue durée et/ou avec une forte variance,
+* certaines personnes sont perdues de vue (déménagement).
+
+On parle alors de **données censurées**.
+
+## Censures
+
+Les différents types de censure:
+
+* censure de type I: fixée.
+* censure de type II: attente.
+* censure de type III: aléatoire (à droite ou à gauche ou par intervalle).
+
+### Censure de type I - fixée
+La durée n'est pas observable au delà d'une durée maximale, fixe. Au lieu d'observer $T_1,...,T_n$, on observe :
+$$X_i= min(T_i,C), \quad i=1,...n$$
+où $C$ est une censure fixe ("à droite").
+
+La durée n'est pas observable avant une date fixe. Au lieu d'observer $T_1,...T_n$, on observe :
+$$X_i= max(T_i,C), \quad i=1,...,n$$
+où $C$ est une censure fixe ("à gauche").
+
+censure par intervalle (censure à gauche et à droite - pas d'observation avant date $t$ et après date $v$)
+
+### Censure de type II - attente
+On observe les durées de vie de $n$ individus jusqu'à ce que $R$ individus aient vu l'évènement d'intérêt se produire (e.g. décès).
+
+Au lieu d'observer $T_1,...,T_n$, on observe : $T_1 \leq T_2 \leq ... \leq T_R$.
+
+censure pas sur lapse de temps mais sur lapse d'individus.
+
+### Censure de type III - aléatoire
+
+**Censure aléatoire à droite**: au lieu d'observer $T_1,...,T_n$, on observe:
+$$X_i=min(T_i,C_i), et \ \delta_i = 1_{T_i \leq C_i} \ pour \ i = 1,...,n$$
+où $C_i$ est une censure aléatoire.
+
+* $T_i$ le temps de survie de l'individu $i$,
+* $C_i$ le temps de censure de l'individu $i$,
+* $\delta_i$ l'indicateur de censure de l'individu $i$.
+
+$\rightarrow$ pour certains individus, on n'observe pas la date de l'évènement. e.g: observation de la date de mise en couple, lorsque déménagement.
+
+*Définition*: la durée T est dite censurée aléatoirement à droite si au lieu d'observer $T_1,...T_n$, on observe:
+$$(X_i,\delta_i),i=1,...,n\ où\ X_i=min(T_i,C_i),\delta_i=1_{T_i \leq C_i}$$
+et $C_i$ est une censure aléatoire.
+
+**Censure aléatoire à gauche**: au lieu d'observer $T_1,...,T_n$, on observe:
+$$X_i=max(T_i,C_i), et \ \delta_i = 1_{T_i \geq C_i} \ pour \ i = 1,...,n$$
+où $C_i$ est une censure aléatoire.
+
+$\rightarrow$ pour certains individus, on n'observe pas la date d'origine. e.g: T durée depuis l'infection par le VIH, mais date d'infection inconnue.
+
+*Définition*: la durée T est dite censurée aléatoirement à gauche si au lieu d'observer $T_1,...T_n$, on observe:
+$$(X_i,\delta_i),i=1,...,n\ où\ X_i=max(T_i,C_i),\delta_i=1_{T_i \geq C_i}$$
+et $C_i$ est une censure aléatoire.
+
+**Censure par intervalle**: censure à gauche et à droite.
+
+$\rightarrow$ pour certains individus, on n'observe pas la date d'origine et/ou la date de l'évènement final : censure aléatoire à gauche et à droite. On n'observe que le temps écoulé entre deux dates connues. e.g: observation de la date de mise en couple, lorsque déménagement.
+
+*Définition*: la durée T est dite censurée par intervalle si au lieu d'observer $T_1,...T_n$, on observe $(X_i,\delta_i),i=1,...,n$ où:
+
+* $X_i=max(min(T_i,C_i^D),C_i^G)-C_i^D$ et $C_i^G$ sont des censures aléatoires.
+* $\delta_i=1$ si $T_i$ est observé,
+* 0 si $T_i$ est censuré à droite,
+* -1 si $T_i$ est censuré à gauche.
+
+
+Censure aléatoire à gauche : suivi médical, personne déclarée positive à une maladie. On sait qu'elle est malade maintenant mais on ne sait pas à quand remonte l'infection.
+
+## Traitement des données censurées
+
+**Fonctions essentielles**:
+
+* la fonction de survie $S(t) = P(T>t)$,
+* la fonction de répartition $F(t) = P(T \leq t)$,
+* la densité $f(t)$ avec $F(t)= \int_0^t f(x)dx, \ t \geq 0$,
+* le risque instantané de décès $h(t)$,
+* le risque cumulé de décès $H(t)$.
+
+Ces 5 fonctions caractérisent la loi de T. Elles sont inconnues. On va les estimer en utilisant les observations (autre longue équation)...
+
+Si les données ne sont pas censurées, $S(t)$ peut être estimée par la proportion d'individus ayant survécu à l'instant $t$, càd par...
+
+Si les données sont censurées, l'estimation de la fonction de survie nécessite des outils spécifiques.
+
+On peut par ailleurs montrer que le temps moyen de survie $E(X)$ et la variance de durée de survie $V(X)$ sont définis pas les quantités suivantes:...
+
+### Construction de l'estimateur de Kaplan-Meier
+
+L'estimateur KM découle de l'idée: survivre après un temps $t$ c'est être en vie juste avant $t$ et ne pas mourir au temps $t$, càd, si $t''<t'<t$

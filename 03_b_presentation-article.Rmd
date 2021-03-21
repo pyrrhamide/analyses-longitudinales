@@ -32,7 +32,7 @@ Cette étude vise à décrire les variations de ressources engendrées par la tr
 
 |Variables expliquées|Variables explicatives|
 |-|-|
-|Logarithme du niveau de vie [^1] |Âge (PR & conjoint)|
+|Logarithme du niveau de vie^[montant mensuel des revenus nets disponibles du ménage par équivalent adulte (revenus d'activités, revenus de remplacement, prestations).] |Âge (PR & conjoint)|
 |Pauvreté|Sexe (PR seule)|
 | |Diplôme (PR & conjoint)|
 | |Nationalité (PR & conjoint)|
@@ -41,7 +41,6 @@ Cette étude vise à décrire les variations de ressources engendrées par la tr
 | |Taille d'unité urbaine|
 | |Situation par rapport à l'emploi $t$ et $t-1$ (PR & conjoint)|
 
-[^1]: montant mensuel des revenus nets disponibles du ménage par équivalent adulte (revenus d'activités, revenus de remplacement, prestations).
 
 Prise ou perte d'emploi non modélisées, SEULEMENT situation donnée modélisée (pas envie de modéliser décisions d'emploi en relation avec perspectives de gain financier attendues, mais plutôt mesurer les variations de revenu "effectives" liées aux changements de situations.)
 

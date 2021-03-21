@@ -17,3 +17,14 @@ résultats
 conclusion
 mod-dyn
 les-modèles-dynamiques-autorégressifs
+méthode-des-moments-généralisés-gmm
+mod-non-lin
+mod-duree
+introduction
+exemple-dune-problématique
+censures
+censure-de-type-i---fixée
+censure-de-type-ii---attente
+censure-de-type-iii---aléatoire
+traitement-des-données-censurées
+construction-de-lestimateur-de-kaplan-meier

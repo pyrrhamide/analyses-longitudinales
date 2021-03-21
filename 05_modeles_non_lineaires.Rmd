@@ -1,0 +1,15 @@
+# Modèles non-linéaires {#mod-non-lin}
+
+* Grande diversité de spécifications possibles.
+* Approche CML (*conditional maximum likelihood*).
+
+$$y_{it} = f(x_{it},\theta,\alpha_i)$$
+
+    * $x_{it}$ sont les variables explicatives,
+    * $alpha_i$ paramètre d'effet individuel,
+    * $\theta$ paramètres du modèle.
+    
+Une **statistique $S(X_i)$ est dire suffisante** si la probabilité conditionnelle d'observer $X_i$ sachant $S(X_i)$ est indépendante de $\alpha_i$.
+
+
+blablabla
