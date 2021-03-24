@@ -21,6 +21,6 @@ github-repo: pyrrhamide/analyses-longitudinales
 - [Séance 4](#mod-dyn): modèles dynamiques
 - [Séance 5](#mod-non-lin): modèles non-linéaires
 - [Séance 6](#mod-duree): modèles de durée
-- Séance 7: optimal matching
+- [Séance 7](#optimal-matching): optimal matching
 - Séance 8: retour critique sur les méthodes
 

@@ -1,0 +1,31 @@
+# Optimal matching {#optimal-matching}
+
+## Présentation monoparentalité
+Maximum de vraisemblance: meilleure explication possible entre équation et données disponibles. Approcher configuration optimale qui permet de respecter équations mises dans le modèle. 
+
+à quoi sert le lissage des flux d'entrées dans la monoparentalité?
+
+proportionnalité des risques : hypothèse nulle ? à prouver qu'elle est pas applicable ?
+
+ancienneté + flux d'entrée + risque instantané relatif
+
+## Optimal matching / appariement optimal
+Méthode relativement nouvelle, empruntée à la biologie médicale (analyse du génome).
+
+Permet de comparer des séquences (trajectoires d'évènements qu'on va comparer les unes avec les autres pour déterminer catégo de trajectoires qui se ressemblent ou qui diffèrent):
+
+* sans présumer de relations de cause à effet (bof les hypothèses sur forme des données et loi postulée, loi cachée qui expliquerait organisation des données),
+* et sans avoir recours à une modélisation inférentielle.
+
+Idée: déterminer une méthode permettant d'analyser de nombreuses séquences et de les catégoriser en fonction! de leurs similarités/dissimilarités.
+
+Un peu comme l'AGD. Décrire/observer un phénomène tel qu'il est.
+
+## Principe de la méthode
+
+OP de transfo modélisées dans tableau 
+
+Hypothèse dans façons construction métrique et critères d'aggrégation.
+
+* substitution = garder la transition.
+* suppression/insertion = décaler la temporalité/la séquence/succession des évènements.
