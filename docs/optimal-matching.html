@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Séance 5 Modèles non-linéaires | Analyses longitudinales</title>
-  <meta name="description" content="Séance 5 Modèles non-linéaires | Analyses longitudinales" />
+  <title>Séance 7 Optimal matching | Analyses longitudinales</title>
+  <meta name="description" content="Séance 7 Optimal matching | Analyses longitudinales" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Séance 5 Modèles non-linéaires | Analyses longitudinales" />
+  <meta property="og:title" content="Séance 7 Optimal matching | Analyses longitudinales" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="pyrrhamide/analyses-longitudinales" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Séance 5 Modèles non-linéaires | Analyses longitudinales" />
+  <meta name="twitter:title" content="Séance 7 Optimal matching | Analyses longitudinales" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="mod-dyn.html"/>
-<link rel="next" href="mod-duree.html"/>
+<link rel="prev" href="mod-duree.html"/>
+
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -142,27 +142,52 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mod-non-lin" class="section level1" number="5">
-<h1><span class="header-section-number">Séance 5</span> Modèles non-linéaires</h1>
+<div id="optimal-matching" class="section level1" number="7">
+<h1><span class="header-section-number">Séance 7</span> Optimal matching</h1>
+<div id="présentation-monoparentalité" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Présentation monoparentalité</h2>
+<p>Maximum de vraisemblance: meilleure explication possible entre équation et données disponibles. Approcher configuration optimale qui permet de respecter équations mises dans le modèle.</p>
+<p>à quoi sert le lissage des flux d’entrées dans la monoparentalité?</p>
+<p>proportionnalité des risques : hypothèse nulle ? à prouver qu’elle est pas applicable ?</p>
+<p>ancienneté + flux d’entrée + risque instantané relatif</p>
+</div>
+<div id="optimal-matching-appariement-optimal" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Optimal matching / appariement optimal</h2>
+<p>Méthode relativement nouvelle, empruntée à la biologie médicale (analyse du génome).</p>
+<p>Permet de comparer des séquences (trajectoires d’évènements qu’on va comparer les unes avec les autres pour déterminer catégo de trajectoires qui se ressemblent ou qui diffèrent):</p>
 <ul>
-<li>Grande diversité de spécifications possibles.</li>
-<li>Approche CML (<em>conditional maximum likelihood</em>).</li>
+<li>sans présumer de relations de cause à effet (bof les hypothèses sur forme des données et loi postulée, loi cachée qui expliquerait organisation des données),</li>
+<li>et sans avoir recours à une modélisation inférentielle.</li>
 </ul>
-<p><span class="math display">\[y_{it} = f(x_{it},\theta,\alpha_i)\]</span></p>
-<pre><code>* $x_{it}$ sont les variables explicatives,
-* $alpha_i$ paramètre d&#39;effet individuel,
-* $\theta$ paramètres du modèle.</code></pre>
-<p>Une <strong>statistique <span class="math inline">\(S(X_i)\)</span> est dire suffisante</strong> si la probabilité conditionnelle d’observer <span class="math inline">\(X_i\)</span> sachant <span class="math inline">\(S(X_i)\)</span> est indépendante de <span class="math inline">\(\alpha_i\)</span>.</p>
-<p>blablabla</p>
+<p>Idée: déterminer une méthode permettant d’analyser de nombreuses séquences et de les catégoriser en fonction! de leurs similarités/dissimilarités.</p>
+<p>Un peu comme l’AGD. Décrire/observer un phénomène tel qu’il est.</p>
+</div>
+<div id="principe-de-la-méthode" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Principe de la méthode</h2>
+<p>OP de transfo modélisées dans tableau</p>
+<p>Hypothèse dans façons construction métrique et critères d’aggrégation.</p>
+<ul>
+<li>substitution = garder la transition.</li>
+<li>suppression/insertion = décaler la temporalité/la séquence/succession des évènements.</li>
+</ul>
 
 </div>
+</div>
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="mod-dyn.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="mod-duree.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="mod-duree.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -184,7 +209,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/pyrrhamide/analyses-longitudinales/blob/main/05_modeles_non_lineaires.Rmd",
+"link": "https://github.com/pyrrhamide/analyses-longitudinales/blob/main/07_optimal_matching.Rmd",
 "text": "Edit"
 },
 "history": {

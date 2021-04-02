@@ -28,3 +28,7 @@ censure-de-type-ii---attente
 censure-de-type-iii---aléatoire
 traitement-des-données-censurées
 construction-de-lestimateur-de-kaplan-meier
+optimal-matching
+présentation-monoparentalité
+optimal-matching-appariement-optimal
+principe-de-la-méthode
