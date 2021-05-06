@@ -1,27 +1,27 @@
 # Modèles linéaires  {#mod-lin}
 $$y_{i,t} = \alpha_i + \beta_ik_{i,t} + \gamma_in_{i,t} + \epsilon_{i,t}$$
 
-- $y_{i,t}$: niveau de vie personne $i$ à date $t$,  
-- $k_{i,t}$: âge de indiv $i$ à date $t$,  
-- $n_{i,t}$: nb unité de conso du ménage de l'individu $i$ à date $t$,  
-- $\epsilon_{i,t}$: (erreur/bruit) supposées être iid (indépendantes entre elles et identiquement distribuées - qui suivent la loi normale) de moyenne nulle et de variance égale à $\sigma^2$.  
+- $y_{i,t}$: niveau de vie personne $i$ à date $t$,
+- $k_{i,t}$: âge de indiv $i$ à date $t$,
+- $n_{i,t}$: nb unité de conso du ménage de l'individu $i$ à date $t$,
+- $\epsilon_{i,t}$: (erreur/bruit) supposées être iid (indépendantes entre elles et identiquement distribuées - qui suivent la loi normale) de moyenne nulle et de variance égale à $\sigma^2$.
 
-Le modèle linéaire sépare les effets et construit analyse moins descriptive/plus analytique. Par exemple, quand on cherche à expliquer le niveau de vie en FRA, qu'est-ce qui est plus important ? Le niveau de diplôme ? La composition du ménage ? Le modèle linéaire fonctionne indépendamment de la progression des générations.  
-Toutes les variables qui sont relatives à l'individu $i$ et qui évoluent dans le temps.  
+Le modèle linéaire sépare les effets et construit analyse moins descriptive/plus analytique. Par exemple, quand on cherche à expliquer le niveau de vie en FRA, qu'est-ce qui est plus important ? Le niveau de diplôme ? La composition du ménage ? Le modèle linéaire fonctionne indépendamment de la progression des générations.
+Toutes les variables qui sont relatives à l'individu $i$ et qui évoluent dans le temps.
 
 Paramètres à estimer:
 
-- $\alpha_i$: effet constant. Ne dépend pas de $t$. Paramètre qu'on suppose constant dans le temps. L'enlever voudrait dire qu'il n'y a pas de différences inter individuelles (pas d'héritage, pas d'hétérogénéité entre individu), que le changement niveau de vie est dû à des effets structurels.  
-- $\beta_i$: paramètre de l'âge, différent par individu.  
-- $\gamma_i$: paramètre de l'unité de conso, différent par individu.  
+- $\alpha_i$: effet constant. Ne dépend pas de $t$. Paramètre qu'on suppose constant dans le temps. L'enlever voudrait dire qu'il n'y a pas de différences inter individuelles (pas d'héritage, pas d'hétérogénéité entre individu), que le changement niveau de vie est dû à des effets structurels.
+- $\beta_i$: paramètre de l'âge, différent par individu.
+- $\gamma_i$: paramètre de l'unité de conso, différent par individu.
 
 **Question : ces paramètres dépendent-ils de $i$?**\
 
-## Modèles **pooled** (phase 1)  
+## Modèles **pooled** (phase 1)
 
 Si aucun paramètre ne dépend de $i$:
 $$y_{i,t} = \alpha + \beta k_{i,t} + \gamma n_{i,t} + \epsilon_{i,t}$$
-Hypothèse (1) d'homogénéité totale: "aucun des paramètres ne dépend de $i$" mais d'$\alpha$ constant ne dépendant pas des individus. Quels que soient les individus $i$, la fonction expliquant leur niveau de vie s'écrit avec des paramètres identiques et constants $\beta$ et $\gamma$. Effet niveau de vie suit une fonction qui est la même pour tous les individus (modèle unique) => modèle *pooled*.  
+Hypothèse (1) d'homogénéité totale: "aucun des paramètres ne dépend de $i$" mais d'$\alpha$ constant ne dépendant pas des individus. Quels que soient les individus $i$, la fonction expliquant leur niveau de vie s'écrit avec des paramètres identiques et constants $\beta$ et $\gamma$. Effet niveau de vie suit une fonction qui est la même pour tous les individus (modèle unique) => modèle *pooled*.
 
 ***
 On teste l'hypothèse d'une structure parfaitement homogène (constantes et coefficients identiques):
@@ -38,7 +38,7 @@ On utilise une *statistique de Fischer* pour tester les restrictions linéaires.
 Tester ce cadre là. Structure explicative du phénomène même pour tout le monde ? Ou bien élasticités des différents facteurs identiques ?\
 S'il existe bien une relation identique entre âge et UC pour tous les individus, source d'hétérogénéité peut provenir des constantes $\alpha_i$.
 
-## Modèles à **effets fixes** (phase 2)   
+## Modèles à **effets fixes** (phase 2)
 
 ou modèle à effet individuel. L'utilisation des effets fixes, contrairement aux effets aléatoires, est nécessaire lorsque des variables explicatives (spécifiques aux individus et les autres variables indépendantes) sont corrélées entre elles. Ces modèles contrôlent l'effet des variables omises dû à l'hétérogénéité individuelle inobservée constante dans le temps. Cette hétérogénéité peut être enlever des données en soustrayant la moyenne par groupe, ou en effectuant un modèle des différences premières qui enlevera toutes les composantes invariables dans le temps.
 
@@ -46,7 +46,7 @@ Si seuls les $\alpha_i$ dépendent de $i$:
 $$y_{i,t} = \alpha_i + \beta k_{i,t} + \gamma n_{i,t} + \epsilon_{i,t}$$
 Pour tous les individus $i$, les variables explicatives temporelles jouent de la même façon *et* il existe des différences structurelles entre les individus.\
 
-Hypothèse (2) d'homogénéité des coefficients $\beta_i$: est-ce que $\beta$ et $\gamma$ sont constants, et que seuls les $\alpha_i$ dépendent des individus ? Niveau de vie évolue de la même façon pour tout le monde en fonction de l'âge et du nb d'UC (var observées dynamiques jouent de la même façon pour tout le monde), mais constante $a_i$ différente entre les gens (certain.e.s ont un bonus). Introduction terme individuel qui rend compte de différences entre individus => modèle à *effets fixes*.  
+Hypothèse (2) d'homogénéité des coefficients $\beta_i$: est-ce que $\beta$ et $\gamma$ sont constants, et que seuls les $\alpha_i$ dépendent des individus ? Niveau de vie évolue de la même façon pour tout le monde en fonction de l'âge et du nb d'UC (var observées dynamiques jouent de la même façon pour tout le monde), mais constante $a_i$ différente entre les gens (certain.e.s ont un bonus). Introduction terme individuel qui rend compte de différences entre individus => modèle à *effets fixes*.
 
 ***
 On cherche maintenant à déterminer si l'hétérogénéité provient des coefficients $\beta_i$:
@@ -71,7 +71,7 @@ Dans le cas "effets fixes"
 $$y_{i,t} = \alpha_i + \beta' x_{i,t} + \epsilon_{i,t} \quad \forall i \in [1,N], \forall t \in [1,T]$$
 
 Les $\beta$ peuvent être obtenus à partir de MCO calculés sur le modèle suivant:
-$$(y_{i,t}-\bar y_i) = \beta'(x_{i,t} - \bar x_i) + (\alpha_i - \bar alpha_i) + \epsilon_{i,t} \quad \forall i \in [1,N], \forall t \in [1,T] \\
+$$(y_{i,t}-\bar y_i) = \beta'(x_{i,t} - \bar x_i) + (\alpha_i - \bar \alpha_i) + \epsilon_{i,t} \quad \forall i \in [1,N], \forall t \in [1,T] \\
 \Rightarrow y'_{it} = \beta X'_{it} + \epsilon'_{it}$$
 
 $\alpha_i$ étant constant dans le temps, $\bar \alpha_i = \alpha_i$ et l'effet fixe est donc éliminé. $\beta$ peut être obtenu en effectuant une régression en MCO de $y'$ sur $X'$.
@@ -79,5 +79,3 @@ $\alpha_i$ étant constant dans le temps, $\bar \alpha_i = \alpha_i$ et l'effet 
 L’estimation du modèle à effet fixe estimé en "within" se fait par élimination de l’effet fixe par l’opérateur de projection « within », ce qui revient à estimer par les moindres carrés ordinaires un modèle dans lequel toutes les variables sont remplacées par leurs différences à leurs moyennes pour l’individu considéré. Les réalisations des estimateurs des constantes $\alpha_i$ sont alors déduits de la relation :
 $$\alpha_i = \bar y_i - \beta' \bar x_i$$
 L'estimation de ce modèle ne requiert donc aucune hypothèse particulière sur la corrélation (ou plutôt l'absence de corrélation) entre l'effet fixe $\alpha_i$ et les autres variables explicatives.
-
-
