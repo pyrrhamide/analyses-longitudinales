@@ -1,19 +1,23 @@
 ---
+knit: "bookdown::render_book"
 title: "Analyses longitudinales"
 author: "KF"
 site: bookdown::bookdown_site
-output: 
-  bookdown::gitbook:
-    config:
-      sharing: null
+# output: 
+#   bookdown::gitbook:
+#     config:
+#       sharing: null
 documentclass: book
 link-citations: yes
 github-repo: pyrrhamide/analyses-longitudinales
+description: "Je suis comme toi, tu es comme moi, on voudrait bien changer parfois."
 ---
 
 # Préface {-}
 
-*Organisation des séances*
+J'ai réuni ici les notes de mes cours d'analyses longitudinales de mon M2, 2020/2021. 
+
+*Organisation des séances (et ordre des notes)*
 
 - [Séance 1](#pano): panorama des méthodes pour les analyses longitudinales
 - [Séance 2](#pseudo-panel): pseudo-panels
@@ -24,3 +28,8 @@ github-repo: pyrrhamide/analyses-longitudinales
 - [Séance 7](#optimal-matching): optimal matching
 - Séance 8: retour critique sur les méthodes
 
+::: {.rmdnote}
+J'utilise le modèle `bs4_book` du package `bookdown`. Ce modèle est pratique pour changer les polices directement, et pour avoir une jolie couleur principale. Il offre aussi des callout blocks comme celui-ci!
+
+Pour plus d'information, voir [ici](https://bookdown.org/yihui/bookdown/html.html).
+:::

@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Séance 7 Optimal matching | Analyses longitudinales</title>
+<title>Annexe A S’amuser avec bs4_book | Analyses longitudinales</title>
 <meta name="author" content="KF">
-<meta name="description" content="7.1 Présentation monoparentalité Maximum de vraisemblance: meilleure explication possible entre équation et données disponibles. Approcher configuration optimale qui permet de respecter équations...">
+<meta name="description" content="À mon avis, bs4_book est plus cool que gitbook. Si j’avais lu plus attentivement la documentation officielle, j’aurais découvert encore plus de tips :) Better late than never innit. Attention! ...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Séance 7 Optimal matching | Analyses longitudinales">
+<meta property="og:title" content="Annexe A S’amuser avec bs4_book | Analyses longitudinales">
 <meta property="og:type" content="book">
-<meta property="og:description" content="7.1 Présentation monoparentalité Maximum de vraisemblance: meilleure explication possible entre équation et données disponibles. Approcher configuration optimale qui permet de respecter équations...">
+<meta property="og:description" content="À mon avis, bs4_book est plus cool que gitbook. Si j’avais lu plus attentivement la documentation officielle, j’aurais découvert encore plus de tips :) Better late than never innit. Attention! ...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Séance 7 Optimal matching | Analyses longitudinales">
-<meta name="twitter:description" content="7.1 Présentation monoparentalité Maximum de vraisemblance: meilleure explication possible entre équation et données disponibles. Approcher configuration optimale qui permet de respecter équations...">
+<meta name="twitter:title" content="Annexe A S’amuser avec bs4_book | Analyses longitudinales">
+<meta name="twitter:description" content="À mon avis, bs4_book est plus cool que gitbook. Si j’avais lu plus attentivement la documentation officielle, j’aurais découvert encore plus de tips :) Better late than never innit. Attention! ...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -47,9 +47,9 @@
 <li><a class="" href="mod-dyn.html"><span class="header-section-number">4</span> Modèles dynamiques</a></li>
 <li><a class="" href="mod-non-lin.html"><span class="header-section-number">5</span> Modèles non-linéaires</a></li>
 <li><a class="" href="mod-duree.html"><span class="header-section-number">6</span> Modèles de durée</a></li>
-<li><a class="active" href="optimal-matching.html"><span class="header-section-number">7</span> Optimal matching</a></li>
+<li><a class="" href="optimal-matching.html"><span class="header-section-number">7</span> Optimal matching</a></li>
 <li class="book-part">Annexe</li>
-<li><a class="" href="samuser-avec-bs4_book.html"><span class="header-section-number">A</span> S’amuser avec bs4_book</a></li>
+<li><a class="active" href="samuser-avec-bs4_book.html"><span class="header-section-number">A</span> S’amuser avec bs4_book</a></li>
 </ul>
 
         <div class="book-extra">
@@ -57,58 +57,47 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="optimal-matching" class="section level1" number="7">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="samuser-avec-bs4_book" class="section level1" number="8">
 <h1>
-<span class="header-section-number">Séance 7</span> Optimal matching<a class="anchor" aria-label="anchor" href="#optimal-matching"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Annexe A</span> S’amuser avec <code>bs4_book</code><a class="anchor" aria-label="anchor" href="#samuser-avec-bs4_book"><i class="fas fa-link"></i></a>
 </h1>
-<div id="présentation-monoparentalité" class="section level2" number="7.1">
-<h2>
-<span class="header-section-number">7.1</span> Présentation monoparentalité<a class="anchor" aria-label="anchor" href="#pr%C3%A9sentation-monoparentalit%C3%A9"><i class="fas fa-link"></i></a>
-</h2>
-<p>Maximum de vraisemblance: meilleure explication possible entre équation et données disponibles. Approcher configuration optimale qui permet de respecter équations mises dans le modèle.</p>
-<p>à quoi sert le lissage des flux d’entrées dans la monoparentalité?</p>
-<p>proportionnalité des risques : hypothèse nulle ? à prouver qu’elle est pas applicable ?</p>
-<p>ancienneté + flux d’entrée + risque instantané relatif</p>
+<p>À mon avis, <code>bs4_book</code> est plus cool que <code>gitbook</code>. Si j’avais lu plus attentivement <a href="https://bookdown.org/yihui/bookdown/html.html">la documentation officielle</a>, j’aurais découvert encore plus de tips :)</p>
+<p>Better late than never innit.</p>
+<div class="rmdcaution">
+<p>Attention!</p>
 </div>
-<div id="optimal-matching-appariement-optimal" class="section level2" number="7.2">
-<h2>
-<span class="header-section-number">7.2</span> Optimal matching / appariement optimal<a class="anchor" aria-label="anchor" href="#optimal-matching-appariement-optimal"><i class="fas fa-link"></i></a>
-</h2>
-<p>Méthode relativement nouvelle, empruntée à la biologie médicale (analyse du génome).</p>
-<p>Permet de comparer des séquences (trajectoires d’évènements qu’on va comparer les unes avec les autres pour déterminer catégo de trajectoires qui se ressemblent ou qui diffèrent):</p>
-<ul>
-<li>sans présumer de relations de cause à effet (bof les hypothèses sur forme des données et loi postulée, loi cachée qui expliquerait organisation des données),</li>
-<li>et sans avoir recours à une modélisation inférentielle.</li>
-</ul>
-<p>Idée: déterminer une méthode permettant d’analyser de nombreuses séquences et de les catégoriser en fonction! de leurs similarités/dissimilarités.</p>
-<p>Un peu comme l’AGD. Décrire/observer un phénomène tel qu’il est.</p>
+<div class="rmdimportant">
+<p>Important!</p>
 </div>
-<div id="principe-de-la-méthode" class="section level2" number="7.3">
-<h2>
-<span class="header-section-number">7.3</span> Principe de la méthode<a class="anchor" aria-label="anchor" href="#principe-de-la-m%C3%A9thode"><i class="fas fa-link"></i></a>
-</h2>
-<p>OP de transfo modélisées dans tableau</p>
-<p>Hypothèse dans façons construction métrique et critères d’aggrégation.</p>
-<ul>
-<li>substitution = garder la transition.</li>
-<li>suppression/insertion = décaler la temporalité/la séquence/succession des évènements.</li>
-</ul>
+<div class="rmdtip">
+<p>Conseil!</p>
 </div>
+<div class="rmdwarning">
+<p>Encore attention!</p>
 </div>
+<p>Différence entre l’ancien thème et le nouveau:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="st">"theme_old.png"</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="theme_old.png" width="100%"></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="st">"theme_new.png"</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="theme_new.png" width="100%"></div>
+
+</div>
+
+
+
+
+
 
 
 
   <div class="chapter-nav">
-<div class="prev"><a href="mod-duree.html"><span class="header-section-number">6</span> Modèles de durée</a></div>
-<div class="next"><a href="samuser-avec-bs4_book.html"><span class="header-section-number">A</span> S’amuser avec bs4_book</a></div>
+<div class="prev"><a href="optimal-matching.html"><span class="header-section-number">7</span> Optimal matching</a></div>
+<div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#optimal-matching"><span class="header-section-number">7</span> Optimal matching</a></li>
-<li><a class="nav-link" href="#pr%C3%A9sentation-monoparentalit%C3%A9"><span class="header-section-number">7.1</span> Présentation monoparentalité</a></li>
-<li><a class="nav-link" href="#optimal-matching-appariement-optimal"><span class="header-section-number">7.2</span> Optimal matching / appariement optimal</a></li>
-<li><a class="nav-link" href="#principe-de-la-m%C3%A9thode"><span class="header-section-number">7.3</span> Principe de la méthode</a></li>
-</ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#samuser-avec-bs4_book"><span class="header-section-number">A</span> S’amuser avec bs4_book</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

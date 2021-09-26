@@ -1,7 +1,21 @@
-bookdown::gitbook:
-  css: style.css
-  config:
-    toc:
-      before: |
-        <li><a href="index.html">Analyses longitudinales</a></li>
-      after: |
+# bookdown::gitbook:
+#   css: style.css
+#   config:
+#     toc:
+#       before: |
+#         <li><a href="index.html">Analyses longitudinales</a></li>
+#       after: |
+bookdown::bs4_book:
+  theme:
+    primary: "#43aa8b"
+    # base_font:
+    #   google: Karla
+    # heading_font:
+    #   google:
+    #     family: Zilla Slab
+    #     wght: 500
+    # code_font:
+    #   google: 
+    #     # arguments to sass::font_google() 
+    #     family: DM Mono
+    #     local: false

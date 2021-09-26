@@ -1,277 +1,192 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Séance 3 Modèles linéaires | Analyses longitudinales</title>
-  <meta name="description" content="Séance 3 Modèles linéaires | Analyses longitudinales" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="Séance 3 Modèles linéaires | Analyses longitudinales" />
-  <meta property="og:type" content="book" />
-  
-  
-  
-  <meta name="github-repo" content="pyrrhamide/analyses-longitudinales" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Séance 3 Modèles linéaires | Analyses longitudinales" />
-  
-  
-  
-
-<meta name="author" content="KF" />
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="pseudo-panel.html"/>
-<link rel="next" href="presentation.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Séance 3 Modèles linéaires | Analyses longitudinales</title>
+<meta name="author" content="KF">
+<meta name="description" content="\[y_{i,t} = \alpha_i + \beta_ik_{i,t} + \gamma_in_{i,t} + \epsilon_{i,t}\] \(y_{i,t}\): niveau de vie personne \(i\) à date \(t\), \(k_{i,t}\): âge de indiv \(i\) à date \(t\), \(n_{i,t}\): nb...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Séance 3 Modèles linéaires | Analyses longitudinales">
+<meta property="og:type" content="book">
+<meta property="og:description" content="\[y_{i,t} = \alpha_i + \beta_ik_{i,t} + \gamma_in_{i,t} + \epsilon_{i,t}\] \(y_{i,t}\): niveau de vie personne \(i\) à date \(t\), \(k_{i,t}\): âge de indiv \(i\) à date \(t\), \(n_{i,t}\): nb...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Séance 3 Modèles linéaires | Analyses longitudinales">
+<meta name="twitter:description" content="\[y_{i,t} = \alpha_i + \beta_ik_{i,t} + \gamma_in_{i,t} + \epsilon_{i,t}\] \(y_{i,t}\): niveau de vie personne \(i\) à date \(t\), \(k_{i,t}\): âge de indiv \(i\) à date \(t\), \(n_{i,t}\): nb...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li><a href="index.html">Analyses longitudinales</a></li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a></li>
-<li class="chapter" data-level="1" data-path="pano.html"><a href="pano.html"><i class="fa fa-check"></i><b>1</b> Panorama des méthodes pour les analyses longitudinales</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="pano.html"><a href="pano.html#intérêt-des-études-longitudinales"><i class="fa fa-check"></i><b>1.1</b> Intérêt des études longitudinales</a></li>
-<li class="chapter" data-level="1.2" data-path="pano.html"><a href="pano.html#limites-des-études-longitudinales"><i class="fa fa-check"></i><b>1.2</b> Limites des études longitudinales</a></li>
-<li class="chapter" data-level="1.3" data-path="pano.html"><a href="pano.html#modélisations-sur-données-longitudinales-économétrie-des-panels-et-modèles-de-durée"><i class="fa fa-check"></i><b>1.3</b> Modélisations sur données longitudinales : économétrie des panels et modèles de durée</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="pseudo-panel.html"><a href="pseudo-panel.html"><i class="fa fa-check"></i><b>2</b> Pseudo-panels</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="pseudo-panel.html"><a href="pseudo-panel.html#application-des-modèles-linéaires-aux-pseudo-panels"><i class="fa fa-check"></i><b>2.1</b> Application des modèles linéaires aux pseudo-panels</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="mod-lin.html"><a href="mod-lin.html"><i class="fa fa-check"></i><b>3</b> Modèles linéaires</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="mod-lin.html"><a href="mod-lin.html#modèles-pooled-phase-1"><i class="fa fa-check"></i><b>3.1</b> Modèles <strong>pooled</strong> (phase 1)</a></li>
-<li class="chapter" data-level="3.2" data-path="mod-lin.html"><a href="mod-lin.html#modèles-à-effets-fixes-phase-2"><i class="fa fa-check"></i><b>3.2</b> Modèles à <strong>effets fixes</strong> (phase 2)</a></li>
-<li class="chapter" data-level="3.3" data-path="mod-lin.html"><a href="mod-lin.html#estimation-within-du-modèle-à-effet-fixe"><i class="fa fa-check"></i><b>3.3</b> Estimation “within” du modèle à effet fixe</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="presentation.html"><a href="presentation.html"><i class="fa fa-check"></i>Présentation article</a>
-<ul>
-<li class="chapter" data-level="3.4" data-path="presentation.html"><a href="presentation.html#objet-de-recherche"><i class="fa fa-check"></i><b>3.4</b> Objet de recherche</a></li>
-<li class="chapter" data-level="3.5" data-path="presentation.html"><a href="presentation.html#questions-de-recherche"><i class="fa fa-check"></i><b>3.5</b> Questions de recherche</a></li>
-<li class="chapter" data-level="3.6" data-path="presentation.html"><a href="presentation.html#données-mobilisées"><i class="fa fa-check"></i><b>3.6</b> Données mobilisées</a></li>
-<li class="chapter" data-level="3.7" data-path="presentation.html"><a href="presentation.html#méthodologie"><i class="fa fa-check"></i><b>3.7</b> Méthodologie</a>
-<ul>
-<li class="chapter" data-level="3.7.1" data-path="presentation.html"><a href="presentation.html#intérets-de-ces-choix-de-méthodes"><i class="fa fa-check"></i><b>3.7.1</b> Intérets de ces choix de méthodes</a></li>
-</ul></li>
-<li class="chapter" data-level="3.8" data-path="presentation.html"><a href="presentation.html#résultats"><i class="fa fa-check"></i><b>3.8</b> Résultats</a></li>
-<li class="chapter" data-level="3.9" data-path="presentation.html"><a href="presentation.html#conclusion"><i class="fa fa-check"></i><b>3.9</b> Conclusion</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="mod-dyn.html"><a href="mod-dyn.html"><i class="fa fa-check"></i><b>4</b> Modèles dynamiques</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="mod-dyn.html"><a href="mod-dyn.html#les-modèles-dynamiques-autorégressifs"><i class="fa fa-check"></i><b>4.1</b> Les modèles dynamiques autorégressifs</a></li>
-<li class="chapter" data-level="4.2" data-path="mod-dyn.html"><a href="mod-dyn.html#méthode-des-moments-généralisés-gmm"><i class="fa fa-check"></i><b>4.2</b> Méthode des moments généralisés (GMM)</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="mod-non-lin.html"><a href="mod-non-lin.html"><i class="fa fa-check"></i><b>5</b> Modèles non-linéaires</a></li>
-<li class="chapter" data-level="6" data-path="mod-duree.html"><a href="mod-duree.html"><i class="fa fa-check"></i><b>6</b> Modèles de durée</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="mod-duree.html"><a href="mod-duree.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.2" data-path="mod-duree.html"><a href="mod-duree.html#exemple-dune-problématique"><i class="fa fa-check"></i><b>6.2</b> Exemple d’une problématique</a></li>
-<li class="chapter" data-level="6.3" data-path="mod-duree.html"><a href="mod-duree.html#censures"><i class="fa fa-check"></i><b>6.3</b> Censures</a>
-<ul>
-<li class="chapter" data-level="6.3.1" data-path="mod-duree.html"><a href="mod-duree.html#censure-de-type-i---fixée"><i class="fa fa-check"></i><b>6.3.1</b> Censure de type I - fixée</a></li>
-<li class="chapter" data-level="6.3.2" data-path="mod-duree.html"><a href="mod-duree.html#censure-de-type-ii---attente"><i class="fa fa-check"></i><b>6.3.2</b> Censure de type II - attente</a></li>
-<li class="chapter" data-level="6.3.3" data-path="mod-duree.html"><a href="mod-duree.html#censure-de-type-iii---aléatoire"><i class="fa fa-check"></i><b>6.3.3</b> Censure de type III - aléatoire</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="mod-duree.html"><a href="mod-duree.html#traitement-des-données-censurées"><i class="fa fa-check"></i><b>6.4</b> Traitement des données censurées</a>
-<ul>
-<li class="chapter" data-level="6.4.1" data-path="mod-duree.html"><a href="mod-duree.html#construction-de-lestimateur-de-kaplan-meier"><i class="fa fa-check"></i><b>6.4.1</b> Construction de l’estimateur de Kaplan-Meier</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="optimal-matching.html"><a href="optimal-matching.html"><i class="fa fa-check"></i><b>7</b> Optimal matching</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="optimal-matching.html"><a href="optimal-matching.html#présentation-monoparentalité"><i class="fa fa-check"></i><b>7.1</b> Présentation monoparentalité</a></li>
-<li class="chapter" data-level="7.2" data-path="optimal-matching.html"><a href="optimal-matching.html#optimal-matching-appariement-optimal"><i class="fa fa-check"></i><b>7.2</b> Optimal matching / appariement optimal</a></li>
-<li class="chapter" data-level="7.3" data-path="optimal-matching.html"><a href="optimal-matching.html#principe-de-la-méthode"><i class="fa fa-check"></i><b>7.3</b> Principe de la méthode</a></li>
-</ul></li>
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Analyses longitudinales</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Analyses longitudinales</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Préface</a></li>
+<li><a class="" href="pano.html"><span class="header-section-number">1</span> Panorama des méthodes pour les analyses longitudinales</a></li>
+<li><a class="" href="pseudo-panel.html"><span class="header-section-number">2</span> Pseudo-panels</a></li>
+<li><a class="active" href="mod-lin.html"><span class="header-section-number">3</span> Modèles linéaires</a></li>
+<li><a class="" href="presentation.html">Présentation article</a></li>
+<li><a class="" href="mod-dyn.html"><span class="header-section-number">4</span> Modèles dynamiques</a></li>
+<li><a class="" href="mod-non-lin.html"><span class="header-section-number">5</span> Modèles non-linéaires</a></li>
+<li><a class="" href="mod-duree.html"><span class="header-section-number">6</span> Modèles de durée</a></li>
+<li><a class="" href="optimal-matching.html"><span class="header-section-number">7</span> Optimal matching</a></li>
+<li class="book-part">Annexe</li>
+<li><a class="" href="samuser-avec-bs4_book.html"><span class="header-section-number">A</span> S’amuser avec bs4_book</a></li>
+</ul>
+
+        <div class="book-extra">
+          
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="mod-lin" class="section level1" number="3">
-<h1><span class="header-section-number">Séance 3</span> Modèles linéaires</h1>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="mod-lin" class="section level1" number="3">
+<h1>
+<span class="header-section-number">Séance 3</span> Modèles linéaires<a class="anchor" aria-label="anchor" href="#mod-lin"><i class="fas fa-link"></i></a>
+</h1>
 <p><span class="math display">\[y_{i,t} = \alpha_i + \beta_ik_{i,t} + \gamma_in_{i,t} + \epsilon_{i,t}\]</span></p>
 <ul>
-<li><span class="math inline">\(y_{i,t}\)</span>: niveau de vie personne <span class="math inline">\(i\)</span> à date <span class="math inline">\(t\)</span>,<br />
-</li>
-<li><span class="math inline">\(k_{i,t}\)</span>: âge de indiv <span class="math inline">\(i\)</span> à date <span class="math inline">\(t\)</span>,<br />
-</li>
-<li><span class="math inline">\(n_{i,t}\)</span>: nb unité de conso du ménage de l’individu <span class="math inline">\(i\)</span> à date <span class="math inline">\(t\)</span>,<br />
-</li>
-<li><span class="math inline">\(\epsilon_{i,t}\)</span>: (erreur/bruit) supposées être iid (indépendantes entre elles et identiquement distribuées - qui suivent la loi normale) de moyenne nulle et de variance égale à <span class="math inline">\(\sigma^2\)</span>.</li>
+<li>
+<span class="math inline">\(y_{i,t}\)</span>: niveau de vie personne <span class="math inline">\(i\)</span> à date <span class="math inline">\(t\)</span>,</li>
+<li>
+<span class="math inline">\(k_{i,t}\)</span>: âge de indiv <span class="math inline">\(i\)</span> à date <span class="math inline">\(t\)</span>,</li>
+<li>
+<span class="math inline">\(n_{i,t}\)</span>: nb unité de conso du ménage de l’individu <span class="math inline">\(i\)</span> à date <span class="math inline">\(t\)</span>,</li>
+<li>
+<span class="math inline">\(\epsilon_{i,t}\)</span>: (erreur/bruit) supposées être iid (indépendantes entre elles et identiquement distribuées - qui suivent la loi normale) de moyenne nulle et de variance égale à <span class="math inline">\(\sigma^2\)</span>.</li>
 </ul>
-<p>Le modèle linéaire sépare les effets et construit analyse moins descriptive/plus analytique. Par exemple, quand on cherche à expliquer le niveau de vie en FRA, qu’est-ce qui est plus important ? Le niveau de diplôme ? La composition du ménage ? Le modèle linéaire fonctionne indépendamment de la progression des générations.<br />
+<p>Le modèle linéaire sépare les effets et construit analyse moins descriptive/plus analytique. Par exemple, quand on cherche à expliquer le niveau de vie en FRA, qu’est-ce qui est plus important ? Le niveau de diplôme ? La composition du ménage ? Le modèle linéaire fonctionne indépendamment de la progression des générations.
 Toutes les variables qui sont relatives à l’individu <span class="math inline">\(i\)</span> et qui évoluent dans le temps.</p>
 <p>Paramètres à estimer:</p>
 <ul>
-<li><span class="math inline">\(\alpha_i\)</span>: effet constant. Ne dépend pas de <span class="math inline">\(t\)</span>. Paramètre qu’on suppose constant dans le temps. L’enlever voudrait dire qu’il n’y a pas de différences inter individuelles (pas d’héritage, pas d’hétérogénéité entre individu), que le changement niveau de vie est dû à des effets structurels.<br />
-</li>
-<li><span class="math inline">\(\beta_i\)</span>: paramètre de l’âge, différent par individu.<br />
-</li>
-<li><span class="math inline">\(\gamma_i\)</span>: paramètre de l’unité de conso, différent par individu.</li>
+<li>
+<span class="math inline">\(\alpha_i\)</span>: effet constant. Ne dépend pas de <span class="math inline">\(t\)</span>. Paramètre qu’on suppose constant dans le temps. L’enlever voudrait dire qu’il n’y a pas de différences inter individuelles (pas d’héritage, pas d’hétérogénéité entre individu), que le changement niveau de vie est dû à des effets structurels.</li>
+<li>
+<span class="math inline">\(\beta_i\)</span>: paramètre de l’âge, différent par individu.</li>
+<li>
+<span class="math inline">\(\gamma_i\)</span>: paramètre de l’unité de conso, différent par individu.</li>
 </ul>
-<p><strong>Question : ces paramètres dépendent-ils de <span class="math inline">\(i\)</span>?</strong><br />
-</p>
+<p><strong>Question : ces paramètres dépendent-ils de <span class="math inline">\(i\)</span>?</strong><br></p>
 <div id="modèles-pooled-phase-1" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Modèles <strong>pooled</strong> (phase 1)</h2>
+<h2>
+<span class="header-section-number">3.1</span> Modèles <strong>pooled</strong> (phase 1)<a class="anchor" aria-label="anchor" href="#mod%C3%A8les-pooled-phase-1"><i class="fas fa-link"></i></a>
+</h2>
 <p>Si aucun paramètre ne dépend de <span class="math inline">\(i\)</span>:
 <span class="math display">\[y_{i,t} = \alpha + \beta k_{i,t} + \gamma n_{i,t} + \epsilon_{i,t}\]</span>
 Hypothèse (1) d’homogénéité totale: “aucun des paramètres ne dépend de <span class="math inline">\(i\)</span>” mais d’<span class="math inline">\(\alpha\)</span> constant ne dépendant pas des individus. Quels que soient les individus <span class="math inline">\(i\)</span>, la fonction expliquant leur niveau de vie s’écrit avec des paramètres identiques et constants <span class="math inline">\(\beta\)</span> et <span class="math inline">\(\gamma\)</span>. Effet niveau de vie suit une fonction qui est la même pour tous les individus (modèle unique) =&gt; modèle <em>pooled</em>.</p>
-<hr />
+<hr>
 <p>On teste l’hypothèse d’une structure parfaitement homogène (constantes et coefficients identiques):
 <span class="math display">\[H_0^1 : \beta_i = \beta \quad \alpha_i = \alpha \quad \forall i \in [1,N] \\
 H_\alpha^1: \exists (i,j) \in [1,N] \; /\; \beta_i \neq \beta_j \;ou\; \alpha_i \neq \alpha_j\]</span></p>
 <p>On utilise une <em>statistique de Fischer</em> pour tester les restrictions linéaires.</p>
 <ul>
-<li><span class="math inline">\(H_0^1\)</span> acceptée =&gt; modèle pooled homogène.</li>
-<li><span class="math inline">\(H_0^1\)</span> rejetée =&gt; deuxième test déterminant si hétérogénéité provient des coefficients <span class="math inline">\(\beta_i\)</span>.</li>
+<li>
+<span class="math inline">\(H_0^1\)</span> acceptée =&gt; modèle pooled homogène.</li>
+<li>
+<span class="math inline">\(H_0^1\)</span> rejetée =&gt; deuxième test déterminant si hétérogénéité provient des coefficients <span class="math inline">\(\beta_i\)</span>.</li>
 </ul>
-<hr />
-<p>Tester ce cadre là. Structure explicative du phénomène même pour tout le monde ? Ou bien élasticités des différents facteurs identiques ?<br />
+<hr>
+<p>Tester ce cadre là. Structure explicative du phénomène même pour tout le monde ? Ou bien élasticités des différents facteurs identiques ?<br>
 S’il existe bien une relation identique entre âge et UC pour tous les individus, source d’hétérogénéité peut provenir des constantes <span class="math inline">\(\alpha_i\)</span>.</p>
 </div>
 <div id="modèles-à-effets-fixes-phase-2" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Modèles à <strong>effets fixes</strong> (phase 2)</h2>
+<h2>
+<span class="header-section-number">3.2</span> Modèles à <strong>effets fixes</strong> (phase 2)<a class="anchor" aria-label="anchor" href="#mod%C3%A8les-%C3%A0-effets-fixes-phase-2"><i class="fas fa-link"></i></a>
+</h2>
 <p>ou modèle à effet individuel. L’utilisation des effets fixes, contrairement aux effets aléatoires, est nécessaire lorsque des variables explicatives (spécifiques aux individus et les autres variables indépendantes) sont corrélées entre elles. Ces modèles contrôlent l’effet des variables omises dû à l’hétérogénéité individuelle inobservée constante dans le temps. Cette hétérogénéité peut être enlever des données en soustrayant la moyenne par groupe, ou en effectuant un modèle des différences premières qui enlevera toutes les composantes invariables dans le temps.</p>
 <p>Si seuls les <span class="math inline">\(\alpha_i\)</span> dépendent de <span class="math inline">\(i\)</span>:
 <span class="math display">\[y_{i,t} = \alpha_i + \beta k_{i,t} + \gamma n_{i,t} + \epsilon_{i,t}\]</span>
-Pour tous les individus <span class="math inline">\(i\)</span>, les variables explicatives temporelles jouent de la même façon <em>et</em> il existe des différences structurelles entre les individus.<br />
-</p>
+Pour tous les individus <span class="math inline">\(i\)</span>, les variables explicatives temporelles jouent de la même façon <em>et</em> il existe des différences structurelles entre les individus.<br></p>
 <p>Hypothèse (2) d’homogénéité des coefficients <span class="math inline">\(\beta_i\)</span>: est-ce que <span class="math inline">\(\beta\)</span> et <span class="math inline">\(\gamma\)</span> sont constants, et que seuls les <span class="math inline">\(\alpha_i\)</span> dépendent des individus ? Niveau de vie évolue de la même façon pour tout le monde en fonction de l’âge et du nb d’UC (var observées dynamiques jouent de la même façon pour tout le monde), mais constante <span class="math inline">\(a_i\)</span> différente entre les gens (certain.e.s ont un bonus). Introduction terme individuel qui rend compte de différences entre individus =&gt; modèle à <em>effets fixes</em>.</p>
-<hr />
+<hr>
 <p>On cherche maintenant à déterminer si l’hétérogénéité provient des coefficients <span class="math inline">\(\beta_i\)</span>:
 <span class="math display">\[H_0^2 : \beta_i = \beta \quad \forall i \in [1,N] \\
 H_\alpha^2: \exists (i,j) \in [1,N] \; /\; \beta_i \neq \beta_j \]</span></p>
 <p>On utilise une <em>statistique de Fischer</em> pour tester les restrictions linéaires.</p>
 <ul>
-<li><span class="math inline">\(H_0^2\)</span> homogénéité des coefficients <span class="math inline">\(\beta_i\)</span> rejetée =&gt; rejet structure de panel.</li>
-<li><span class="math inline">\(H_0^2\)</span> acceptée =&gt; on teste maintenant l’égalité des N constantes individuelles <span class="math inline">\(\alpha_i\)</span> sous l’hypothèse de coefficients <span class="math inline">\(\beta_i\)</span> communs à tous les individus :</li>
+<li>
+<span class="math inline">\(H_0^2\)</span> homogénéité des coefficients <span class="math inline">\(\beta_i\)</span> rejetée =&gt; rejet structure de panel.</li>
+<li>
+<span class="math inline">\(H_0^2\)</span> acceptée =&gt; on teste maintenant l’égalité des N constantes individuelles <span class="math inline">\(\alpha_i\)</span> sous l’hypothèse de coefficients <span class="math inline">\(\beta_i\)</span> communs à tous les individus :</li>
 </ul>
 <p><span class="math display">\[H_0^3 : \alpha_i = \alpha \quad \forall i \in [1,N] \\ H_\alpha^3: \exists (i,j) \in [1,N] \; /\; \alpha_i \neq \alpha_j\]</span>
 On utilise une <em>statistique de Fischer</em> pour tester les restrictions linéaires.</p>
 <ul>
-<li><span class="math inline">\(H_0^3\)</span> homogénéité des constantes rejetée =&gt; modèle de panel avec effets individuels.</li>
-<li><span class="math inline">\(H_0^3\)</span> acceptée =&gt; modèle pooled.</li>
+<li>
+<span class="math inline">\(H_0^3\)</span> homogénéité des constantes rejetée =&gt; modèle de panel avec effets individuels.</li>
+<li>
+<span class="math inline">\(H_0^3\)</span> acceptée =&gt; modèle pooled.</li>
 </ul>
-<hr />
+<hr>
 </div>
 <div id="estimation-within-du-modèle-à-effet-fixe" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Estimation “within” du modèle à effet fixe</h2>
+<h2>
+<span class="header-section-number">3.3</span> Estimation “within” du modèle à effet fixe<a class="anchor" aria-label="anchor" href="#estimation-within-du-mod%C3%A8le-%C3%A0-effet-fixe"><i class="fas fa-link"></i></a>
+</h2>
 <p>Dans le cas “effets fixes”
-<span class="math display">\[y_{i,t} = \alpha_i + \beta&#39; x_{i,t} + \epsilon_{i,t} \quad \forall i \in [1,N], \forall t \in [1,T]\]</span></p>
+<span class="math display">\[y_{i,t} = \alpha_i + \beta' x_{i,t} + \epsilon_{i,t} \quad \forall i \in [1,N], \forall t \in [1,T]\]</span></p>
 <p>Les <span class="math inline">\(\beta\)</span> peuvent être obtenus à partir de MCO calculés sur le modèle suivant:
-<span class="math display">\[(y_{i,t}-\bar y_i) = \beta&#39;(x_{i,t} - \bar x_i) + (\alpha_i - \bar alpha_i) + \epsilon_{i,t} \quad \forall i \in [1,N], \forall t \in [1,T] \\
-\Rightarrow y&#39;_{it} = \beta X&#39;_{it} + \epsilon&#39;_{it}\]</span></p>
-<p><span class="math inline">\(\alpha_i\)</span> étant constant dans le temps, <span class="math inline">\(\bar \alpha_i = \alpha_i\)</span> et l’effet fixe est donc éliminé. <span class="math inline">\(\beta\)</span> peut être obtenu en effectuant une régression en MCO de <span class="math inline">\(y&#39;\)</span> sur <span class="math inline">\(X&#39;\)</span>.</p>
+<span class="math display">\[(y_{i,t}-\bar y_i) = \beta'(x_{i,t} - \bar x_i) + (\alpha_i - \bar \alpha_i) + \epsilon_{i,t} \quad \forall i \in [1,N], \forall t \in [1,T] \\
+\Rightarrow y'_{it} = \beta X'_{it} + \epsilon'_{it}\]</span></p>
+<p><span class="math inline">\(\alpha_i\)</span> étant constant dans le temps, <span class="math inline">\(\bar \alpha_i = \alpha_i\)</span> et l’effet fixe est donc éliminé. <span class="math inline">\(\beta\)</span> peut être obtenu en effectuant une régression en MCO de <span class="math inline">\(y'\)</span> sur <span class="math inline">\(X'\)</span>.</p>
 <p>L’estimation du modèle à effet fixe estimé en “within” se fait par élimination de l’effet fixe par l’opérateur de projection « within », ce qui revient à estimer par les moindres carrés ordinaires un modèle dans lequel toutes les variables sont remplacées par leurs différences à leurs moyennes pour l’individu considéré. Les réalisations des estimateurs des constantes <span class="math inline">\(\alpha_i\)</span> sont alors déduits de la relation :
-<span class="math display">\[\alpha_i = \bar y_i - \beta&#39; \bar x_i\]</span>
+<span class="math display">\[\alpha_i = \bar y_i - \beta' \bar x_i\]</span>
 L’estimation de ce modèle ne requiert donc aucune hypothèse particulière sur la corrélation (ou plutôt l’absence de corrélation) entre l’effet fixe <span class="math inline">\(\alpha_i\)</span> et les autres variables explicatives.</p>
 
 </div>
 </div>
-            </section>
+  <div class="chapter-nav">
+<div class="prev"><a href="pseudo-panel.html"><span class="header-section-number">2</span> Pseudo-panels</a></div>
+<div class="next"><a href="presentation.html">Présentation article</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#mod-lin"><span class="header-section-number">3</span> Modèles linéaires</a></li>
+<li><a class="nav-link" href="#mod%C3%A8les-pooled-phase-1"><span class="header-section-number">3.1</span> Modèles pooled (phase 1)</a></li>
+<li><a class="nav-link" href="#mod%C3%A8les-%C3%A0-effets-fixes-phase-2"><span class="header-section-number">3.2</span> Modèles à effets fixes (phase 2)</a></li>
+<li><a class="nav-link" href="#estimation-within-du-mod%C3%A8le-%C3%A0-effet-fixe"><span class="header-section-number">3.3</span> Estimation “within” du modèle à effet fixe</a></li>
+</ul>
 
-          </div>
-        </div>
-      </div>
-<a href="pseudo-panel.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="presentation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Analyses longitudinales</strong>" was written by KF. </p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": null,
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/pyrrhamide/analyses-longitudinales/blob/main/03_a_Modèles-linéaires.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"toc": {
-"collapse": "subsection"
-}
-});
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -283,7 +198,22 @@ gitbook.start({
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
-
 </html>
