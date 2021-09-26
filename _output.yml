@@ -7,7 +7,7 @@
 #       after: |
 bookdown::bs4_book:
   theme:
-    primary: "#43aa8b"
+    primary: "#40916c"
     # base_font:
     #   google: Karla
     # heading_font:
