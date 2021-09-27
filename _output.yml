@@ -6,8 +6,12 @@
 #         <li><a href="index.html">Analyses longitudinales</a></li>
 #       after: |
 bookdown::bs4_book:
+  repo:
+    base: https://github.com/pyrrhamide/analyses-longitudinales
+    branch: main
+  template: "bs4_fr.html"
   theme:
-    primary: "#40916c"
+    primary: "#3c6e71"
     # base_font:
     #   google: Karla
     # heading_font:
