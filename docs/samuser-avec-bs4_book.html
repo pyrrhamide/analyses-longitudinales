@@ -16,8 +16,9 @@
 <meta name="twitter:description" content="À mon avis, bs4_book est plus cool que gitbook. Si j’avais lu plus attentivement la documentation officielle, j’aurais découvert encore plus de tips :) Better late than never innit.  A.1 Callout...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="https://fonts.googleapis.com/css2?family=DM%20Mono&amp;display=swap" rel="stylesheet">
+<script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="libs/sass6dfb196653bd58cb226a278ef2ba7c4e/custom.min.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -67,6 +68,7 @@
 <h2>
 <span class="header-section-number">A.1</span> Callout blocks<a class="anchor" aria-label="anchor" href="#callout-blocks"><i class="fas fa-link"></i></a>
 </h2>
+<p>Pour attirer l’attention sur quelque chose.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb2-1"><a href="samuser-avec-bs4_book.html#cb2-1" aria-hidden="true" tabindex="-1"></a>::: {.rmdcaution}</span>
 <span id="cb2-2"><a href="samuser-avec-bs4_book.html#cb2-2" aria-hidden="true" tabindex="-1"></a>Attention!</span>
 <span id="cb2-3"><a href="samuser-avec-bs4_book.html#cb2-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
@@ -110,20 +112,43 @@ Figure A.2: Nouveau thème bookdown BS4
 </p>
 </div>
 </div>
-<div id="traduction-du-template" class="section level2" number="8.3">
+<div id="changements-esthétiques" class="section level2" number="8.3">
 <h2>
-<span class="header-section-number">A.3</span> Traduction du template<a class="anchor" aria-label="anchor" href="#traduction-du-template"><i class="fas fa-link"></i></a>
+<span class="header-section-number">A.3</span> Changements esthétiques<a class="anchor" aria-label="anchor" href="#changements-esth%C3%A9tiques"><i class="fas fa-link"></i></a>
 </h2>
-<p>Par défaut, le template est en anglais donc les intitulés que je n’ai pas généré sont en anglais. L’image du dessus le montre bien, “Table of contents” et “On this page” ne sont pas traduits.</p>
-<p>Pour changer ça, j’ai tout simplement recopié <a href="https://github.com/rstudio/bookdown/blob/main/inst/templates/bs4_book.html">le template par défaut</a> qui est développé par l’équipe de <code>bookdown</code>, et j’ai modifié manuellement les noms. Ce nouveau fichier est visible <a href="https://github.com/pyrrhamide/analyses-longitudinales/blob/main/bs4_fr.html">ici</a>. Puis dans <code>_output.yml</code>, j’ai défini ce nouveau template comme celui à utiliser:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="samuser-avec-bs4_book.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="at">bookdown:</span><span class="fu">:bs4_book</span><span class="kw">:</span></span>
-<span id="cb6-2"><a href="samuser-avec-bs4_book.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">repo</span><span class="kw">:</span></span>
-<span id="cb6-3"><a href="samuser-avec-bs4_book.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">base</span><span class="kw">:</span><span class="at"> https://github.com/pyrrhamide/analyses-longitudinales</span></span>
-<span id="cb6-4"><a href="samuser-avec-bs4_book.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branch</span><span class="kw">:</span><span class="at"> main</span></span>
-<span id="cb6-5"><a href="samuser-avec-bs4_book.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="st">"bs4_fr.html"</span></span>
-<span id="cb6-6"><a href="samuser-avec-bs4_book.html#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">theme</span><span class="kw">:</span></span>
-<span id="cb6-7"><a href="samuser-avec-bs4_book.html#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="st">"#3c6e71"</span></span></code></pre></div>
-<p>Mettre l’extension <code>.html</code> du fichier est obligatoire sinon <code>bookdown</code> ne trouve pas le template.</p>
+<p>Le texte est trop grand et trop rapproché du titre du chapitre à mon goût. Je crée donc un fichier <code>custom.scss</code> pour changer ça. Ce fichier sera utile pour des futures changements. Sachant que je me lasse rapidement de certains aspects esthétiques, ce fichier est mon meilleur ami.</p>
+<p>Pour la taille et l’écart entre le titre et le texte, voilà ce que je fais dans <code>custom.scss</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb6-1"><a href="samuser-avec-bs4_book.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#content</span> {</span>
+<span id="cb6-2"><a href="samuser-avec-bs4_book.html#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">17</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb6-3"><a href="samuser-avec-bs4_book.html#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-4"><a href="samuser-avec-bs4_book.html#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="samuser-avec-bs4_book.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="pp">#content</span> h1 {</span>
+<span id="cb6-6"><a href="samuser-avec-bs4_book.html#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding-bottom</span>: <span class="dv">15</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb6-7"><a href="samuser-avec-bs4_book.html#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Je déclare l’existence de <code>custom.scss</code> dans <code>_output.yml</code>. On peut aussi changer les polices dans ce fichier. Je montre ça plus bas.</p>
+</div>
+<div id="traduction-du-template" class="section level2" number="8.4">
+<h2>
+<span class="header-section-number">A.4</span> Traduction du template<a class="anchor" aria-label="anchor" href="#traduction-du-template"><i class="fas fa-link"></i></a>
+</h2>
+<p>Par défaut, le template est en anglais donc les intitulés que je n’ai pas généré sont en anglais. L’image <a href="samuser-avec-bs4_book.html#fig:theme-new">A.2</a> au-dessus le montre bien, “Table of contents” et “On this page” ne sont pas traduits.</p>
+<p>Pour changer ça, j’ai tout simplement recopié <a href="https://github.com/rstudio/bookdown/blob/main/inst/templates/bs4_book.html">le template par défaut</a> qui est développé par l’équipe de <code>bookdown</code>, et j’ai modifié manuellement les noms. Ce nouveau fichier est visible <a href="https://github.com/pyrrhamide/analyses-longitudinales/blob/main/bs4_fr.html">ici</a>. Puis dans <code>_output.yml</code>, j’ai défini ce nouveau template comme celui à utiliser.</p>
+<p>Voici à quoi ressemble <code>_output.yml</code>, avec la branche github, le template, le fichier scss, la couleur et la police des blocs de code déclarés:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="samuser-avec-bs4_book.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="at">bookdown:</span><span class="fu">:bs4_book</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="samuser-avec-bs4_book.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">repo</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="samuser-avec-bs4_book.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">base</span><span class="kw">:</span><span class="at"> https://github.com/pyrrhamide/analyses-longitudinales</span></span>
+<span id="cb7-4"><a href="samuser-avec-bs4_book.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branch</span><span class="kw">:</span><span class="at"> main</span></span>
+<span id="cb7-5"><a href="samuser-avec-bs4_book.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="st">"bs4_fr.html"</span></span>
+<span id="cb7-6"><a href="samuser-avec-bs4_book.html#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">css</span><span class="kw">:</span><span class="at"> custom.scss</span></span>
+<span id="cb7-7"><a href="samuser-avec-bs4_book.html#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb7-8"><a href="samuser-avec-bs4_book.html#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="st">"#3c6e71"</span></span>
+<span id="cb7-9"><a href="samuser-avec-bs4_book.html#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code_font</span><span class="kw">:</span></span>
+<span id="cb7-10"><a href="samuser-avec-bs4_book.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">google</span><span class="kw">:</span></span>
+<span id="cb7-11"><a href="samuser-avec-bs4_book.html#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">family</span><span class="kw">:</span><span class="at"> DM Mono</span></span>
+<span id="cb7-12"><a href="samuser-avec-bs4_book.html#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">local</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div>
+<div class="rmdcaution">
+<p>Mettre le nom de l’extension <code>.html</code> du fichier template est obligatoire sinon <code>bookdown</code> ne le trouve pas.</p>
+</div>
 
 </div>
 </div>
@@ -144,7 +169,8 @@ Figure A.2: Nouveau thème bookdown BS4
 <li><a class="nav-link" href="#samuser-avec-bs4_book"><span class="header-section-number">A</span> S’amuser avec bs4_book</a></li>
 <li><a class="nav-link" href="#callout-blocks"><span class="header-section-number">A.1</span> Callout blocks</a></li>
 <li><a class="nav-link" href="#diff%C3%A9rence-entre-lancien-th%C3%A8me-et-le-nouveau"><span class="header-section-number">A.2</span> Différence entre l’ancien thème et le nouveau</a></li>
-<li><a class="nav-link" href="#traduction-du-template"><span class="header-section-number">A.3</span> Traduction du template</a></li>
+<li><a class="nav-link" href="#changements-esth%C3%A9tiques"><span class="header-section-number">A.3</span> Changements esthétiques</a></li>
+<li><a class="nav-link" href="#traduction-du-template"><span class="header-section-number">A.4</span> Traduction du template</a></li>
 </ul>
 
       <div class="book-extra">

@@ -37,4 +37,5 @@ principe-de-la-méthode
 samuser-avec-bs4_book
 callout-blocks
 différence-entre-lancien-thème-et-le-nouveau
+changements-esthétiques
 traduction-du-template
