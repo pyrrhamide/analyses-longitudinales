@@ -1,0 +1,18 @@
+#content {
+    font-size: 17px;
+}
+
+#content h1 {
+    padding-bottom: 15px;
+}
+
+.rmdcaution,
+.rmdimportant,
+.rmdnote,
+.rmdtip,
+.rmdwarning {
+    padding: 1em 1em 1em 2em;
+    border-left-width: 5pt;
+    border-radius: 5px;
+    margin-bottom: 2em;
+}
