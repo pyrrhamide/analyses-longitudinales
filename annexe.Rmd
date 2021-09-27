@@ -8,6 +8,8 @@ Better late than never innit.
 
 ## Callout blocks
 
+Pour attirer l'attention sur quelque chose.
+
 ```md
 ::: {.rmdcaution}
 Attention!
@@ -60,11 +62,31 @@ knitr::include_graphics("theme_old.png")
 knitr::include_graphics("theme_new.png")
 ```
 
+## Changements esthétiques
+
+Le texte est trop grand et trop rapproché du titre du chapitre à mon goût. Je crée donc un fichier `custom.scss` pour changer ça. Ce fichier sera utile pour des futures changements. Sachant que je me lasse rapidement de certains aspects esthétiques, ce fichier est mon meilleur ami.
+
+Pour la taille et l'écart entre le titre et le texte, voilà ce que je fais dans `custom.scss`:
+
+```css 
+#content {
+    font-size: 17px;
+}
+
+#content h1 {
+    padding-bottom: 15px;
+}
+```
+
+Je déclare l'existence de `custom.scss` dans `_output.yml`. On peut aussi changer les polices dans ce fichier. Je montre ça plus bas.
+
 ## Traduction du template
 
-Par défaut, le template est en anglais donc les intitulés que je n'ai pas généré sont en anglais. L'image du dessus le montre bien, "Table of contents" et "On this page" ne sont pas traduits.
+Par défaut, le template est en anglais donc les intitulés que je n'ai pas généré sont en anglais. L'image \@ref(fig:theme-new) au-dessus le montre bien, "Table of contents" et "On this page" ne sont pas traduits.
 
-Pour changer ça, j'ai tout simplement recopié [le template par défaut](https://github.com/rstudio/bookdown/blob/main/inst/templates/bs4_book.html) qui est développé par l'équipe de `bookdown`, et j'ai modifié manuellement les noms. Ce nouveau fichier est visible [ici](https://github.com/pyrrhamide/analyses-longitudinales/blob/main/bs4_fr.html). Puis dans `_output.yml`, j'ai défini ce nouveau template comme celui à utiliser:
+Pour changer ça, j'ai tout simplement recopié [le template par défaut](https://github.com/rstudio/bookdown/blob/main/inst/templates/bs4_book.html) qui est développé par l'équipe de `bookdown`, et j'ai modifié manuellement les noms. Ce nouveau fichier est visible [ici](https://github.com/pyrrhamide/analyses-longitudinales/blob/main/bs4_fr.html). Puis dans `_output.yml`, j'ai défini ce nouveau template comme celui à utiliser.
+
+Voici à quoi ressemble `_output.yml`, avec la branche github, le template, le fichier scss, la couleur et la police des blocs de code déclarés:
 
 ```yaml
 bookdown::bs4_book:
@@ -72,8 +94,15 @@ bookdown::bs4_book:
     base: https://github.com/pyrrhamide/analyses-longitudinales
     branch: main
   template: "bs4_fr.html"
+  css: custom.scss
   theme:
     primary: "#3c6e71"
+    code_font:
+      google:
+        family: DM Mono
+        local: false
 ```
 
-Mettre l'extension `.html` du fichier est obligatoire sinon `bookdown` ne trouve pas le template.
+::: {.rmdcaution}
+Mettre le nom de l'extension `.html` du fichier template est obligatoire sinon `bookdown` ne le trouve pas.
+:::
