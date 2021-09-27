@@ -1,3 +1,5 @@
+fig:theme-old
+fig:theme-new
 pano
 intérêt-des-études-longitudinales
 limites-des-études-longitudinales
@@ -33,3 +35,6 @@ présentation-monoparentalité
 optimal-matching-appariement-optimal
 principe-de-la-méthode
 samuser-avec-bs4_book
+callout-blocks
+différence-entre-lancien-thème-et-le-nouveau
+traduction-du-template

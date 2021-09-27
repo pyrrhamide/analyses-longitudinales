@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- https://github.com/rstudio/bookdown/blob/main/inst/templates/bs4_book.html --><html lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Annexe A S’amuser avec bs4_book | Analyses longitudinales</title>
-<meta name="author" content="KF">
-<meta name="description" content="À mon avis, bs4_book est plus cool que gitbook. Si j’avais lu plus attentivement la documentation officielle, j’aurais découvert encore plus de tips :) Better late than never innit. Attention! ...">
+<meta name="author" content="Kanto Fiaferana">
+<meta name="description" content="À mon avis, bs4_book est plus cool que gitbook. Si j’avais lu plus attentivement la documentation officielle, j’aurais découvert encore plus de tips :) Better late than never innit.  A.1 Callout...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
 <meta property="og:title" content="Annexe A S’amuser avec bs4_book | Analyses longitudinales">
 <meta property="og:type" content="book">
-<meta property="og:description" content="À mon avis, bs4_book est plus cool que gitbook. Si j’avais lu plus attentivement la documentation officielle, j’aurais découvert encore plus de tips :) Better late than never innit. Attention! ...">
+<meta property="og:description" content="À mon avis, bs4_book est plus cool que gitbook. Si j’avais lu plus attentivement la documentation officielle, j’aurais découvert encore plus de tips :) Better late than never innit.  A.1 Callout...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Annexe A S’amuser avec bs4_book | Analyses longitudinales">
-<meta name="twitter:description" content="À mon avis, bs4_book est plus cool que gitbook. Si j’avais lu plus attentivement la documentation officielle, j’aurais découvert encore plus de tips :) Better late than never innit. Attention! ...">
+<meta name="twitter:description" content="À mon avis, bs4_book est plus cool que gitbook. Si j’avais lu plus attentivement la documentation officielle, j’aurais découvert encore plus de tips :) Better late than never innit.  A.1 Callout...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -23,13 +23,13 @@
 
 <div class="container-fluid">
 <div class="row">
-  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Accéder au contenu principal</a>
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
         <a href="index.html" title="">Analyses longitudinales</a>
       </h1>
-      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Voir table des matières</span></button>
     </div>
 
     <div id="main-nav" class="collapse-lg">
@@ -37,7 +37,7 @@
         <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
 </form>
 
-      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+      <nav aria-label="Table of contents"><h2>Table des matières</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Préface</a></li>
 <li><a class="" href="pano.html"><span class="header-section-number">1</span> Panorama des méthodes pour les analyses longitudinales</a></li>
@@ -53,7 +53,7 @@
 </ul>
 
         <div class="book-extra">
-          
+          <p><a id="book-repo" href="https://github.com/pyrrhamide/analyses-longitudinales">Voir le code source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
@@ -63,26 +63,69 @@
 </h1>
 <p>À mon avis, <code>bs4_book</code> est plus cool que <code>gitbook</code>. Si j’avais lu plus attentivement <a href="https://bookdown.org/yihui/bookdown/html.html">la documentation officielle</a>, j’aurais découvert encore plus de tips :)</p>
 <p>Better late than never innit.</p>
+<div id="callout-blocks" class="section level2" number="8.1">
+<h2>
+<span class="header-section-number">A.1</span> Callout blocks<a class="anchor" aria-label="anchor" href="#callout-blocks"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb2-1"><a href="samuser-avec-bs4_book.html#cb2-1" aria-hidden="true" tabindex="-1"></a>::: {.rmdcaution}</span>
+<span id="cb2-2"><a href="samuser-avec-bs4_book.html#cb2-2" aria-hidden="true" tabindex="-1"></a>Attention!</span>
+<span id="cb2-3"><a href="samuser-avec-bs4_book.html#cb2-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="rmdcaution">
 <p>Attention!</p>
 </div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb3-1"><a href="samuser-avec-bs4_book.html#cb3-1" aria-hidden="true" tabindex="-1"></a>::: {.rmdimportant}</span>
+<span id="cb3-2"><a href="samuser-avec-bs4_book.html#cb3-2" aria-hidden="true" tabindex="-1"></a>Important!</span>
+<span id="cb3-3"><a href="samuser-avec-bs4_book.html#cb3-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="rmdimportant">
 <p>Important!</p>
 </div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb4-1"><a href="samuser-avec-bs4_book.html#cb4-1" aria-hidden="true" tabindex="-1"></a>::: {.rmdtip}</span>
+<span id="cb4-2"><a href="samuser-avec-bs4_book.html#cb4-2" aria-hidden="true" tabindex="-1"></a>Conseil!</span>
+<span id="cb4-3"><a href="samuser-avec-bs4_book.html#cb4-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="rmdtip">
 <p>Conseil!</p>
 </div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb5-1"><a href="samuser-avec-bs4_book.html#cb5-1" aria-hidden="true" tabindex="-1"></a>::: {.rmdwarning}</span>
+<span id="cb5-2"><a href="samuser-avec-bs4_book.html#cb5-2" aria-hidden="true" tabindex="-1"></a>Encore attention!</span>
+<span id="cb5-3"><a href="samuser-avec-bs4_book.html#cb5-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="rmdwarning">
 <p>Encore attention!</p>
 </div>
-<p>Différence entre l’ancien thème et le nouveau:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="st">"theme_old.png"</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="theme_old.png" width="100%"></div>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="st">"theme_new.png"</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="theme_new.png" width="100%"></div>
+</div>
+<div id="différence-entre-lancien-thème-et-le-nouveau" class="section level2" number="8.2">
+<h2>
+<span class="header-section-number">A.2</span> Différence entre l’ancien thème et le nouveau<a class="anchor" aria-label="anchor" href="#diff%C3%A9rence-entre-lancien-th%C3%A8me-et-le-nouveau"><i class="fas fa-link"></i></a>
+</h2>
+<p>Je trouve le nouveau thème plus propre que l’ancien. La table des matières à gauche montre seulement les intitulés de premier niveau, et à droite on voit les intitulés du niveau en-dessous. Cool!</p>
+<div class="figure">
+<span style="display:block;" id="fig:theme-old"></span>
+<img src="theme_old.png" alt="Ancien thème bookdown GitBook" width="100%"><p class="caption">
+Figure A.1: Ancien thème bookdown GitBook
+</p>
+</div>
+<div class="figure">
+<span style="display:block;" id="fig:theme-new"></span>
+<img src="theme_new.png" alt="Nouveau thème bookdown BS4" width="100%"><p class="caption">
+Figure A.2: Nouveau thème bookdown BS4
+</p>
+</div>
+</div>
+<div id="traduction-du-template" class="section level2" number="8.3">
+<h2>
+<span class="header-section-number">A.3</span> Traduction du template<a class="anchor" aria-label="anchor" href="#traduction-du-template"><i class="fas fa-link"></i></a>
+</h2>
+<p>Par défaut, le template est en anglais donc les intitulés que je n’ai pas généré sont en anglais. L’image du dessus le montre bien, “Table of contents” et “On this page” ne sont pas traduits.</p>
+<p>Pour changer ça, j’ai tout simplement recopié <a href="https://github.com/rstudio/bookdown/blob/main/inst/templates/bs4_book.html">le template par défaut</a> qui est développé par l’équipe de <code>bookdown</code>, et j’ai modifié manuellement les noms. Ce nouveau fichier est visible <a href="https://github.com/pyrrhamide/analyses-longitudinales/blob/main/bs4_fr.html">ici</a>. Puis dans <code>_output.yml</code>, j’ai défini ce nouveau template comme celui à utiliser:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="samuser-avec-bs4_book.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="at">bookdown:</span><span class="fu">:bs4_book</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="samuser-avec-bs4_book.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">repo</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="samuser-avec-bs4_book.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">base</span><span class="kw">:</span><span class="at"> https://github.com/pyrrhamide/analyses-longitudinales</span></span>
+<span id="cb6-4"><a href="samuser-avec-bs4_book.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branch</span><span class="kw">:</span><span class="at"> main</span></span>
+<span id="cb6-5"><a href="samuser-avec-bs4_book.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">template</span><span class="kw">:</span><span class="at"> </span><span class="st">"bs4_fr.html"</span></span>
+<span id="cb6-6"><a href="samuser-avec-bs4_book.html#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb6-7"><a href="samuser-avec-bs4_book.html#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="st">"#3c6e71"</span></span></code></pre></div>
+<p>Mettre l’extension <code>.html</code> du fichier est obligatoire sinon <code>bookdown</code> ne trouve pas le template.</p>
 
+</div>
 </div>
 
 
@@ -96,12 +139,18 @@
 <div class="prev"><a href="optimal-matching.html"><span class="header-section-number">7</span> Optimal matching</a></div>
 <div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#samuser-avec-bs4_book"><span class="header-section-number">A</span> S’amuser avec bs4_book</a></li></ul>
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>Sur cette page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#samuser-avec-bs4_book"><span class="header-section-number">A</span> S’amuser avec bs4_book</a></li>
+<li><a class="nav-link" href="#callout-blocks"><span class="header-section-number">A.1</span> Callout blocks</a></li>
+<li><a class="nav-link" href="#diff%C3%A9rence-entre-lancien-th%C3%A8me-et-le-nouveau"><span class="header-section-number">A.2</span> Différence entre l’ancien thème et le nouveau</a></li>
+<li><a class="nav-link" href="#traduction-du-template"><span class="header-section-number">A.3</span> Traduction du template</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-          
+<li><a id="book-source" href="https://github.com/pyrrhamide/analyses-longitudinales/blob/main/annexe.Rmd">Voir la source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/pyrrhamide/analyses-longitudinales/edit/main/annexe.Rmd">Modifier cette page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
@@ -113,11 +162,11 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Analyses longitudinales</strong>" was written by KF. </p>
+    <p>"<strong>Analyses longitudinales</strong>" a été écrit par Kanto Fiaferana. </p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
-    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+    <p>Ce livre a été construit avec le package <a class="text-light" href="https://bookdown.org">bookdown</a> de R.</p>
   </div>
 
 </div></div>
