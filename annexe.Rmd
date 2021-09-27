@@ -6,29 +6,74 @@
 
 Better late than never innit.
 
+## Callout blocks
+
+```md
 ::: {.rmdcaution}
 Attention!
 :::
+```
+
+::: {.rmdcaution}
+Attention!
+:::
+
+```md
+::: {.rmdimportant}
+Important!
+:::
+```
 
 ::: {.rmdimportant}
 Important!
 :::
 
+```md
 ::: {.rmdtip}
 Conseil!
 :::
+```
+
+::: {.rmdtip}
+Conseil!
+:::
+
+```md 
+::: {.rmdwarning}
+Encore attention!
+:::
+```
 
 ::: {.rmdwarning}
 Encore attention!
 :::
 
-Différence entre l'ancien thème et le nouveau:
+## Différence entre l'ancien thème et le nouveau
 
-```{r theme-old, out.width="100%"}
+Je trouve le nouveau thème plus propre que l'ancien. La table des matières à gauche montre seulement les intitulés de premier niveau, et à droite on voit les intitulés du niveau en-dessous. Cool!
+
+```{r theme-old, echo=F, out.width="100%", fig.cap="Ancien thème bookdown GitBook"}
 knitr::include_graphics("theme_old.png")
 ```
 
-```{r theme-new, out.width="100%"}
+```{r theme-new, echo=F, out.width="100%", fig.cap="Nouveau thème bookdown BS4"}
 knitr::include_graphics("theme_new.png")
 ```
 
+## Traduction du template
+
+Par défaut, le template est en anglais donc les intitulés que je n'ai pas généré sont en anglais. L'image du dessus le montre bien, "Table of contents" et "On this page" ne sont pas traduits.
+
+Pour changer ça, j'ai tout simplement recopié [le template par défaut](https://github.com/rstudio/bookdown/blob/main/inst/templates/bs4_book.html) qui est développé par l'équipe de `bookdown`, et j'ai modifié manuellement les noms. Ce nouveau fichier est visible [ici](https://github.com/pyrrhamide/analyses-longitudinales/blob/main/bs4_fr.html). Puis dans `_output.yml`, j'ai défini ce nouveau template comme celui à utiliser:
+
+```yaml
+bookdown::bs4_book:
+  repo:
+    base: https://github.com/pyrrhamide/analyses-longitudinales
+    branch: main
+  template: "bs4_fr.html"
+  theme:
+    primary: "#3c6e71"
+```
+
+Mettre l'extension `.html` du fichier est obligatoire sinon `bookdown` ne trouve pas le template.
