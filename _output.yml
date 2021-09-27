@@ -10,6 +10,7 @@ bookdown::bs4_book:
     base: https://github.com/pyrrhamide/analyses-longitudinales
     branch: main
   template: "bs4_fr.html"
+  css: custom.scss
   theme:
     primary: "#3c6e71"
     # base_font:
