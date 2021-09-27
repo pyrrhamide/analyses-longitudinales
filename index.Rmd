@@ -1,16 +1,13 @@
 ---
 knit: "bookdown::render_book"
 title: "Analyses longitudinales"
-author: "KF"
+author: "Kanto Fiaferana"
+lang: fr
 site: bookdown::bookdown_site
-# output: 
-#   bookdown::gitbook:
-#     config:
-#       sharing: null
 documentclass: book
 link-citations: yes
 github-repo: pyrrhamide/analyses-longitudinales
-description: "Je suis comme toi, tu es comme moi, on voudrait bien changer parfois."
+description: "Je suis comme toi, tu es comme moi, on voudrait bien changer parfois. Aller ailleurs, où le rêve devient roi. Oui je suis une fille comme toi!"
 ---
 
 # Préface {-}
